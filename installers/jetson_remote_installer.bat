@@ -44,20 +44,23 @@ echo [3/3] Adding C:\Scripts to system PATH...
 powershell -Command "$currentPath = [Environment]::GetEnvironmentVariable('Path', 'Machine'); if ($currentPath -notlike '*C:\Scripts*') { [Environment]::SetEnvironmentVariable('Path', $currentPath + ';C:\Scripts', 'Machine'); echo '      Added to PATH' } else { echo '      Already in PATH' }"
 echo.
 
-:: Success message
+:: Success message with instructions
+cls
 echo ============================================
 echo  Installation Complete!
 echo ============================================
 echo.
-echo You can now connect to your Jetson Nano by:
+echo The Jetson Remote Desktop tool has been installed successfully.
 echo.
-echo   1. Open a NEW Command Prompt or PowerShell
-echo   2. Type: connect_jetson
-echo   3. Press Enter
-echo.
-echo Note: Close and reopen any open terminals
-echo       for the PATH changes to take effect.
-echo.
-echo The installer will close in 10 seconds...
-timeout /t 10
+echo ========================================================
+echo  How to Connect a Remote Dekstop Session with the Nano:
+echo ========================================================
+echo  1. Close this window
+echo  2. Open a NEW Command Prompt (no need run as administrator)   
+echo  3. Type: connect_jetson
+echo  4. Press Enter
+echo  5. Remote Desktop will open and connect to 192.168.0.191
+echo ============================================
+echo Press any key to close this installer...
+pause >nul
 exit
