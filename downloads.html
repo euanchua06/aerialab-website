@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads - AeriaLab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">AeriaLab</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="downloads.html" class="active">Downloads</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="downloads-section">
+            <div class="container">
+                <h2>Downloads</h2>
+                
+                <div class="download-card">
+                    <div class="download-icon">📦</div>
+                    <h3>Jetson Remote Desktop Installer</h3>
+                    <p>One-click installer for Windows to set up remote desktop connection to your Jetson Nano.</p>
+                    
+                    <div class="features-list">
+                        <h4>What it does:</h4>
+                        <ul>
+                            <li>✅ Creates C:\Scripts folder</li>
+                            <li>✅ Installs connect_jetson command</li>
+                            <li>✅ Adds to system PATH automatically</li>
+                            <li>✅ Sets up Remote Desktop to 192.168.0.191</li>
+                        </ul>
+                    </div>
+
+                    <div class="install-steps">
+                        <h4>Installation Steps:</h4>
+                        <ol>
+                            <li>Download the installer below</li>
+                            <li>Right-click → "Run as administrator"</li>
+                            <li>Follow the on-screen instructions</li>
+                            <li>Open new Command Prompt and type: <code>connect_jetson</code></li>
+                        </ol>
+                    </div>
+
+                    <a href="installers/jetson_remote_installer.bat" download class="download-button">
+                        ⬇️ Download Installer
+                    </a>
+
+                    <div class="requirements">
+                        <h4>Requirements:</h4>
+                        <p>• Windows 10/11<br>
+                        • Administrator privileges<br>
+                        • Network connection to Jetson Nano (192.168.0.191)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AeriaLab. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
