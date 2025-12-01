@@ -30,7 +30,15 @@ nav {
     font-weight: bold;
     letter-spacing: 2px;
 }
+.logo a {
+    color: #00d4ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
+.logo a:hover {
+    color: #00b8e6;
+}
 /* Main Content */
 main {
     min-height: calc(100vh - 200px);
@@ -774,4 +782,5 @@ nav .container {
         padding: 20px;
     }
 }
+
 
