@@ -1,58 +1,63 @@
 @echo off
+:: Check for admin rights and auto-elevate if needed
+net session >nul 2>&1
+if %errorLevel% neq 0 (
+    echo Requesting administrator privileges...
+    powershell -Command "Start-Process '%~f0' -Verb RunAs"
+    exit /b
+)
+
+:: Clear screen and show header
+cls
 echo ============================================
 echo  AeriaLab Jetson Remote Desktop Installer
 echo ============================================
 echo.
 echo This will set up remote desktop connection to your Jetson Nano
 echo.
-pause
+echo Running with administrator privileges...
+echo.
+timeout /t 2 /nobreak >nul
 
-REM Check for admin privileges
-net session >nul 2>&1
-if %errorLevel% == 0 (
-    echo Running with administrator privileges...
-    echo.
-) else (
-    echo ERROR: This installer requires administrator privileges!
-    echo Please right-click and select "Run as administrator"
-    echo.
-    pause
-    exit /b 1
-)
-
-REM Create Scripts directory
-echo Creating C:\Scripts directory...
+:: Create Scripts directory
+echo [1/3] Creating C:\Scripts directory...
 if not exist "C:\Scripts" (
     mkdir "C:\Scripts"
-    echo Created C:\Scripts
+    echo       Created C:\Scripts
 ) else (
-    echo C:\Scripts already exists
+    echo       C:\Scripts already exists
 )
+echo.
 
-REM Create connection batch file
-echo Creating connect_jetson.bat...
+:: Create connection batch file
+echo [2/3] Creating connect_jetson.bat...
 (
 echo @echo off
+echo echo Connecting to Jetson Nano at 192.168.0.191...
 echo mstsc /v:192.168.0.191
 ) > "C:\Scripts\connect_jetson.bat"
-echo Created connect_jetson.bat
-
-REM Add to PATH
-echo Adding C:\Scripts to system PATH...
-powershell -Command "[Environment]::SetEnvironmentVariable('Path', [Environment]::GetEnvironmentVariable('Path', 'Machine') + ';C:\Scripts', 'Machine')"
-echo Added to PATH
-
+echo       Created connect_jetson.bat
 echo.
+
+:: Add to PATH
+echo [3/3] Adding C:\Scripts to system PATH...
+powershell -Command "$currentPath = [Environment]::GetEnvironmentVariable('Path', 'Machine'); if ($currentPath -notlike '*C:\Scripts*') { [Environment]::SetEnvironmentVariable('Path', $currentPath + ';C:\Scripts', 'Machine'); echo '      Added to PATH' } else { echo '      Already in PATH' }"
+echo.
+
+:: Success message
 echo ============================================
 echo  Installation Complete!
 echo ============================================
 echo.
 echo You can now connect to your Jetson Nano by:
-echo 1. Opening a NEW Command Prompt or PowerShell
-echo 2. Typing: connect_jetson
-echo 3. Press Enter
 echo.
-echo Note: You may need to close and reopen your terminal
+echo   1. Open a NEW Command Prompt or PowerShell
+echo   2. Type: connect_jetson
+echo   3. Press Enter
+echo.
+echo Note: Close and reopen any open terminals
 echo       for the PATH changes to take effect.
 echo.
-pause
+echo The installer will close in 10 seconds...
+timeout /t 10
+exit
