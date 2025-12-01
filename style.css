@@ -434,3 +434,122 @@ nav .container {
         font-size: 1.1rem;
     }
 }
+/* Contact Page */
+.contact-section {
+    padding: 60px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+.contact-section h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid #333;
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #00d4ff;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.required {
+    color: #ff4444;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: #0a0a0a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00d4ff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.char-count {
+    text-align: right;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
+}
+
+#form-status {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.success-message {
+    color: #00ff00;
+    padding: 15px;
+    background: rgba(0, 255, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #00ff00;
+}
+
+.error-message {
+    color: #ff4444;
+    padding: 15px;
+    background: rgba(255, 68, 68, 0.1);
+    border-radius: 8px;
+    border: 1px solid #ff4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #contact-form {
+        padding: 25px;
+    }
+    
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+}
