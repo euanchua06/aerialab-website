@@ -104,4 +104,171 @@ footer {
     .logo {
         font-size: 1.5rem;
     }
+
+}
+/* Navigation Links */
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00d4ff;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    color: #000;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
+}
+
+/* Downloads Page */
+.downloads-section {
+    padding: 60px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+.downloads-section h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.download-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
+    border: 1px solid #333;
+}
+
+.download-icon {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.download-card h3 {
+    color: #00d4ff;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.download-card p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.features-list,
+.install-steps,
+.requirements {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.features-list h4,
+.install-steps h4,
+.requirements h4 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.features-list ul,
+.install-steps ol {
+    color: #cccccc;
+    margin-left: 20px;
+}
+
+.features-list li,
+.install-steps li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.install-steps code {
+    background: #000;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #00d4ff;
+    font-family: 'Courier New', monospace;
+}
+
+.requirements p {
+    color: #cccccc;
+    line-height: 1.8;
+}
+
+.download-button {
+    display: block;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    color: #000;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 30px auto;
+    max-width: 300px;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+}
+
+.download-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
 }
