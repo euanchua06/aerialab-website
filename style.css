@@ -489,6 +489,10 @@ nav .container {
     transition: border-color 0.3s;
 }
 
+.form-group input {
+    height: 135px;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
@@ -497,9 +501,8 @@ nav .container {
 
 .form-group textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 360px;
 }
-
 .char-count {
     text-align: right;
     color: #888;
@@ -864,6 +867,7 @@ nav .container {
     margin: 0 0 30px 0;
     max-width: 200px;
 }
+
 
 
 
