@@ -452,7 +452,7 @@ nav .container {
 }
 
 #contact-form {
-    max-width: 1200px;
+    max-width: 2000px;
     margin: 0 auto;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     padding: 40px;
@@ -1063,6 +1063,7 @@ nav .container {
         font-size: 2rem;
     }
 }
+
 
 
 
