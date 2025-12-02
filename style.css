@@ -1140,32 +1140,43 @@ nav .container {
 /* Spec Content */
 .specs-content {
     position: relative;
-    min-height: 400px;
+    height: 500px;
+    display: flex;
+    align-items: center;
 }
 
 .spec-panel {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.5s ease;
 }
 
 .spec-panel.active {
-    display: grid;
     opacity: 1;
+    pointer-events: auto;
 }
 
 .spec-image {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .spec-image img {
-    max-width: 100%;
+    max-width: 80%;
+    max-height: 400px;
     height: auto;
+    object-fit: contain;
     filter: drop-shadow(0 10px 30px rgba(0, 212, 255, 0.3));
 }
 
@@ -1219,6 +1230,7 @@ nav .container {
         font-size: 1rem;
     }
 }
+
 
 
 
