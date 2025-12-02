@@ -23,15 +23,45 @@
     <main>
         <section class="product-detail-section">
             <div class="container">
-                <h2>Hand-held Scanner</h2>
-                
-                <div class="detail-content">
-                    <div class="detail-image">
-                        <img src="images/scanner.jpg" alt="Hand-held Scanner">
+                <div class="product-detail-card">
+                    <!-- Left Side: Photo Gallery -->
+                    <div class="product-gallery">
+                        <div class="gallery-main">
+                            <button class="gallery-arrow gallery-arrow-left" onclick="changeSlide(-1)">‹</button>
+                            
+                            <div class="gallery-images">
+                                <img src="images/scanner.jpg" alt="Hand-held Scanner" class="gallery-slide active">
+                                <img src="images/scanner-detail-2.jpg" alt="Hand-held Scanner" class="gallery-slide">
+                                <img src="images/scanner-detail-3.jpg" alt="Hand-held Scanner" class="gallery-slide">
+                                <img src="images/scanner-detail-4.jpg" alt="Hand-held Scanner" class="gallery-slide">
+                                <img src="images/scanner-detail-5.jpg" alt="Hand-held Scanner" class="gallery-slide">
+                            </div>
+                            
+                            <button class="gallery-arrow gallery-arrow-right" onclick="changeSlide(1)">›</button>
+                        </div>
+                        
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                        </div>
                     </div>
-                    
-                    <div class="detail-description">
-                        <p>Our All-in-one hand-held Scanner allows quick and easy collection of information in various use cases.</p>
+
+                    <!-- Right Side: Main Info -->
+                    <div class="product-main-info">
+                        <h2>Hand-held Scanner</h2>
+                        
+                        <div class="product-description">
+                            <p>Our All-in-one hand-held Scanner allows quick and easy collection of information in various use cases.</p>
+                        </div>
+
+                        <div class="product-pricing">
+                            <div class="price-tag">$20.00</div>
+                        </div>
+
+                        <a href="checkout-scanner.html" class="buy-now-btn">Buy Now</a>
                     </div>
                 </div>
 
@@ -45,5 +75,40 @@
             <p>&copy; 2024 AeriaLab. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName("gallery-slide");
+            const dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            // Remove active from all dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            // Show current slide and dot
+            slides[slideIndex - 1].classList.add("active");
+            dots[slideIndex - 1].classList.add("active");
+        }
+    </script>
 </body>
 </html>
