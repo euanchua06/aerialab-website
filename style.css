@@ -1185,15 +1185,17 @@ nav .container {
 }
 
 .spec-text h4 {
-    color: #00d4ff;
+    color: #ffffff;
     font-size: 1.8rem;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .spec-text p {
-    color: #cccccc;
+    color: #ffffff;
     font-size: 1.2rem;
     line-height: 1.8;
+    font-weight: 400;
 }
 
 /* Responsive */
@@ -1230,6 +1232,7 @@ nav .container {
         font-size: 1rem;
     }
 }
+
 
 
 
