@@ -65,6 +65,54 @@
                     </div>
                 </div>
 
+                <!-- Hardware Specifications Section -->
+                <div class="hardware-specs-section">
+                    <div class="specs-background">
+                        <h3>Hardware Specifications</h3>
+                        
+                        <div class="specs-tabs">
+                            <button class="spec-tab active" onclick="showSpec('jetson')">Jetson Nano Orin</button>
+                            <button class="spec-tab" onclick="showSpec('realsense')">Intel RealSense D435i</button>
+                            <button class="spec-tab" onclick="showSpec('powerbank')">Anker Zolo Power Bank</button>
+                        </div>
+
+                        <div class="specs-content">
+                            <!-- Jetson Nano Tab -->
+                            <div id="jetson-spec" class="spec-panel active">
+                                <div class="spec-image">
+                                    <img src="images/jetson.png" alt="Jetson Nano Orin">
+                                </div>
+                                <div class="spec-text">
+                                    <h4>Jetson Nano Orin</h4>
+                                    <p>Jetson Nano Orin specifications and details will go here.</p>
+                                </div>
+                            </div>
+
+                            <!-- RealSense Tab -->
+                            <div id="realsense-spec" class="spec-panel">
+                                <div class="spec-image">
+                                    <img src="images/realsense.png" alt="Intel RealSense D435i">
+                                </div>
+                                <div class="spec-text">
+                                    <h4>Intel RealSense D435i</h4>
+                                    <p>Intel RealSense D435i specifications and details will go here.</p>
+                                </div>
+                            </div>
+
+                            <!-- Power Bank Tab -->
+                            <div id="powerbank-spec" class="spec-panel">
+                                <div class="spec-image">
+                                    <img src="images/powerbank.png" alt="Anker Zolo Power Bank">
+                                </div>
+                                <div class="spec-text">
+                                    <h4>Anker Zolo Power Bank</h4>
+                                    <p>Anker Zolo Power Bank specifications and details will go here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <a href="products.html" class="back-to-products-btn">Back to Products</a>
             </div>
         </section>
@@ -109,6 +157,27 @@
             slides[slideIndex - 1].classList.add("active");
             dots[slideIndex - 1].classList.add("active");
         }
+        // Hardware Specs Tab Functionality
+        function showSpec(specName) {
+            // Hide all spec panels
+            const panels = document.getElementsByClassName('spec-panel');
+            for (let i = 0; i < panels.length; i++) {
+                panels[i].classList.remove('active');
+            }
+            
+            // Remove active class from all tabs
+            const tabs = document.getElementsByClassName('spec-tab');
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            // Show selected panel
+            document.getElementById(specName + '-spec').classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
     </script>
 </body>
 </html>
+
