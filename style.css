@@ -366,7 +366,14 @@ nav .container {
     gap: 12px;
     margin-top: auto;
 }
+.product-buttons.single-button {
+    display: block;
+}
 
+.btn-learn-more.full-width {
+    width: 100%;
+    display: block;
+}
 .btn-learn-more,
 .btn-buy {
     flex: 1;
@@ -782,5 +789,6 @@ nav .container {
         padding: 20px;
     }
 }
+
 
 
