@@ -789,6 +789,81 @@ nav .container {
         padding: 20px;
     }
 }
+/* Product Detail Page */
+.product-detail-section {
+    padding: 60px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+.product-detail-section h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.detail-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 15px;
+    padding: 40px;
+    border: 2px solid #333;
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
+}
+
+.detail-image {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.detail-description {
+    text-align: center;
+}
+
+.detail-description p {
+    color: #cccccc;
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+/* Back to Products Button */
+.back-to-products-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 40px auto 0;
+    padding: 15px 30px;
+    background: #ffffff;
+    color: #1a1a1a;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.back-to-products-btn:hover {
+    background: #e6e6e6;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.5);
+}
+
+/* Back button on checkout pages (top position) */
+.checkout-section .back-to-products-btn {
+    margin: 0 0 30px 0;
+    max-width: 200px;
+}
 
 
 
