@@ -452,7 +452,7 @@ nav .container {
 }
 
 #contact-form {
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     padding: 40px;
@@ -487,10 +487,7 @@ nav .container {
     font-size: 1rem;
     font-family: inherit;
     transition: border-color 0.3s;
-}
-
-.form-group input {
-    height: 135px;
+    line-height: 1.5;
 }
 
 .form-group input:focus,
@@ -501,7 +498,7 @@ nav .container {
 
 .form-group textarea {
     resize: vertical;
-    min-height: 360px;
+    min-height: calc(1.5rem * 4 + 24px);
 }
 .char-count {
     text-align: right;
@@ -1066,6 +1063,7 @@ nav .container {
         font-size: 2rem;
     }
 }
+
 
 
 
