@@ -39,56 +39,6 @@ nav {
 .logo a:hover {
     color: #00b8e6;
 }
-/* Main Content */
-main {
-    min-height: calc(100vh - 200px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero h2 {
-    color: #ffffff;
-    font-size: 3rem;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-.drone-showcase {
-    margin: 40px auto;
-    max-width: 900px;
-}
-
-.drone-showcase img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.drone-showcase img:hover {
-    transform: scale(1.02);
-}
-
-.tagline {
-    color: #00d4ff;
-    font-size: 1.5rem;
-    margin-top: 40px;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
 
 /* Footer */
 footer {
@@ -143,26 +93,6 @@ nav .container {
 .nav-links a.active {
     color: #00d4ff;
 }
-
-/* CTA Button */
-.cta-button {
-    display: inline-block;
-    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-    color: #000;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: all 0.3s;
-    font-size: 1.1rem;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
-}
-
 /* Downloads Page */
 .downloads-section {
     padding: 60px 20px;
@@ -2078,6 +2008,7 @@ nav .container {
         width: 100%;
     }
 }
+
 
 
 
