@@ -1339,23 +1339,19 @@ nav .container {
 }
 
 .card-image {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+    min-height: 300px;
 }
-
-.image-caption {
-    color: #888;
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-top: 10px;
-}
-
 /* Regular cards without images */
 .about-card:not(.with-image) h3 {
     color: #00d4ff;
@@ -1399,23 +1395,26 @@ nav .container {
 }
 
 .mission-card {
-    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-    border-color: #00d4ff;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border: 3px solid #00d4ff;
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4);
+    text-align: center;
 }
 
 .mission-card h3 {
-    color: #000;
+    color: #00d4ff;
+    text-align: center;
+    font-size: 2rem;
 }
 
 .mission-statement {
-    color: #000;
+    color: #ffffff;
     font-size: 1.3rem;
     font-weight: 500;
     text-align: center;
     font-style: italic;
     margin: 0;
 }
-
 .cta-section {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     padding: 50px 40px;
@@ -1524,6 +1523,7 @@ nav .container {
         width: 100%;
     }
 }
+
 
 
 
