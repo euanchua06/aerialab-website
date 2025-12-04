@@ -61,66 +61,68 @@
     </footer>
 
     <script>
-        // Word counter
-        const messageBox = document.getElementById('message');
-        const wordCounter = document.getElementById('word-counter');
-        const wordWarning = document.getElementById('word-warning');
-
-        messageBox.addEventListener('input', function() {
-            const text = this.value.trim();
-            const words = text.length === 0 ? 0 : text.split(/\s+/).length;
+    // Word counter
+    const messageBox = document.getElementById('message');
+    const wordCounter = document.getElementById('word-counter');
+    const wordWarning = document.getElementById('word-warning');
     
-            wordCounter.textContent = words;
-    
-            // Show warning if over 500 words
-            if (words > 500) {
-                wordWarning.style.display = 'inline';
-                wordCounter.style.color = '#ff4444';
-            } else {
-                wordWarning.style.display = 'none';
-                wordCounter.style.color = '#888';
-            }
-        });
-
-        // Form submission handling
-        const form = document.getElementById('contact-form');
-        const formStatus = document.getElementById('form-status');
+    messageBox.addEventListener('input', function() {
+        const text = this.value.trim();
+        const words = text.length === 0 ? 0 : text.split(/\s+/).length;
         
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Validate word count
-            const text = messageBox.value.trim();
-            const words = text.length === 0 ? 0 : text.split(/\s+/).length;
-            if (words > 500) {
-                formStatus.innerHTML = '<p class="error-message">Please limit your message to 500 words or less.</p>';
-                return;
+        wordCounter.textContent = words;
+        
+        // Show warning if over 500 words
+        if (words > 500) {
+            wordWarning.style.display = 'inline';
+            wordCounter.style.color = '#ff4444';
+        } else {
+            wordWarning.style.display = 'none';
+            wordCounter.style.color = '#888';
+        }
+    });
+    
+    // Form submission handling
+    const form = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validate word count
+        const text = messageBox.value.trim();
+        const words = text.length === 0 ? 0 : text.split(/\s+/).length;
+        
+        if (words > 500) {
+            formStatus.innerHTML = '<p class="error-message">Please limit your message to 500 words or less.</p>';
+            return;
+        }
+        
+        const formData = new FormData(form);
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
             }
-            const formData = new FormData(form);
-            
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    formStatus.innerHTML = '<p class="success-message">Thank you! Your message has been sent successfully.</p>';
-                    form.reset();
-                    charCounter.textContent = '0';
-                } else {
-                    formStatus.innerHTML = '<p class="error-message">Oops! There was a problem sending your message. Please try again.</p>';
-                }
-            })
-            .catch(error => {
+        })
+        .then(response => {
+            if (response.ok) {
+                formStatus.innerHTML = '<p class="success-message">Thank you! Your message has been sent successfully.</p>';
+                form.reset();
+                wordCounter.textContent = '0';
+                wordWarning.style.display = 'none';
+            } else {
                 formStatus.innerHTML = '<p class="error-message">Oops! There was a problem sending your message. Please try again.</p>';
-            });
+            }
+        })
+        .catch(error => {
+            formStatus.innerHTML = '<p class="error-message">Oops! There was a problem sending your message. Please try again.</p>';
         });
-    </script>
-</body>
+    });
+</script>
 
-</html>
 
 
 
