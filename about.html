@@ -4,24 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - AeriaLab</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <meta name="description" content="Learn about AeriaLab's mission to support Singapore's food security through innovative agricultural technology">
-    <style>
-        /* Page Load Animation */
-        body {
-            opacity: 0;
-            animation: fadeIn 0.6s ease-in forwards;
-        }
-        
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -39,164 +23,113 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="about-hero-fullwidth scroll-fade-in">
-            <img src="images/about-hero.jpg" alt="Singapore Gardens">
-            <div class="hero-overlay">
-                <div class="hero-content">
-                    <h2>About AeriaLab</h2>
-                    <p>Empowering Singapore's Agricultural Future</p>
+        <section class="about-section">
+            <div class="container">
+                <!-- Hero Section with Image -->
+                <div class="about-hero">
+                    <img src="images/about-hero.jpg" alt="AeriaLab Team">
+                    <div class="hero-overlay">
+                        <h2>About AeriaLab</h2>
+                        <p class="hero-subtitle">Empowering Singapore's Agricultural Future</p>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Our Story Section - Image Left, Text Right -->
-        <section class="about-split-fullwidth white-bg scroll-fade-in">
-            <div class="split-image-side">
-                <img src="images/team-photo.jpg" alt="AeriaLab Student Team">
-            </div>
-            <div class="split-text-side">
-                <h3>Our Story</h3>
-                <p>Founded in 2024 by a group of students at Singapore Polytechnic, AeriaLab was born from a simple observation: Singapore's heavy reliance on food imports presents both a challenge and an opportunity. With the nation's ambitious "30 by 30" goal—to produce 30% of nutritional needs locally by 2030—we recognized the urgent need for innovative solutions to support our local farms.</p>
-                <p>What started as a student project has evolved into a mission to transform how agriculture operates in Singapore and beyond.</p>
-            </div>
-        </section>
+                <div class="about-content">
+                    <!-- Our Story with Team Photo -->
+                    <div class="about-card with-image">
+                        <div class="card-text">
+                            <h3>Our Story</h3>
+                            <p>Founded in 2024 by a group of students at Singapore Polytechnic, AeriaLab was born from a simple observation: Singapore's heavy reliance on food imports presents both a challenge and an opportunity. With the nation's ambitious "30 by 30" goal—to produce 30% of nutritional needs locally by 2030—we recognized the urgent need for innovative solutions to support our local farms.</p>
+                            <p>What started as a student project has evolved into a mission to transform how agriculture operates in Singapore and beyond.</p>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/team-photo.jpg" alt="AeriaLab Student Team">
+                            <p class="image-caption">The AeriaLab team at Singapore Polytechnic</p>
+                        </div>
+                    </div>
 
-        <!-- The Challenge Section - Full Width Dark -->
-        <section class="about-fulltext-section scroll-fade-in">
-            <div class="text-content-wrapper">
-                <h3>The Challenge</h3>
-                <p>Vertical farms across Singapore face mounting pressures. Rising operational costs are squeezing profit margins, making it increasingly difficult for smaller farms to stay competitive. Manual labor costs continue to climb, while the need for skilled and experienced farmers creates a significant barrier to entry and scalability.</p>
-                <p>For many small to medium-sized operations, these challenges threaten their very survival. Traditional monitoring methods are time-intensive, require expert knowledge, and often lack the consistency needed for optimal crop management.</p>
-            </div>
-        </section>
+                    <!-- The Challenge with Vertical Farm Image -->
+                    <div class="about-card with-image reverse">
+                        <div class="card-image">
+                            <img src="images/vertical-farm.jpg" alt="Vertical Farm in Singapore">
+                            <p class="image-caption">Singapore's vertical farming landscape</p>
+                        </div>
+                        <div class="card-text">
+                            <h3>The Challenge</h3>
+                            <p>Vertical farms across Singapore face mounting pressures. Rising operational costs are squeezing profit margins, making it increasingly difficult for smaller farms to stay competitive. Manual labor costs continue to climb, while the need for skilled and experienced farmers creates a significant barrier to entry and scalability.</p>
+                            <p>For many small to medium-sized operations, these challenges threaten their very survival. Traditional monitoring methods are time-intensive, require expert knowledge, and often lack the consistency needed for optimal crop management.</p>
+                        </div>
+                    </div>
 
-        <!-- Our Solution Section - Text Left, Image Right -->
-        <section class="about-split-fullwidth light-bg scroll-fade-in">
-            <div class="split-text-side">
-                <h3>Our Solution</h3>
-                <p>The Harvester II Hand-held Scanner represents our answer to these challenges. We believe that advanced agricultural technology shouldn't be a luxury reserved for large commercial operations. Our scanner is designed to be:</p>
-                <ul>
-                    <li><strong>Affordable:</strong> Priced to be accessible to smaller farms without compromising on capability</li>
-                    <li><strong>User-Friendly:</strong> No extensive training or agricultural expertise required—intuitive design that anyone can use</li>
-                    <li><strong>Accurate:</strong> Computer vision technology powered by YOLO models ensures consistent, reliable plant health assessment</li>
-                    <li><strong>Efficient:</strong> Dramatically reduces time spent on manual inspection while improving data quality</li>
-                </ul>
-                <p>By combining Intel RealSense depth sensing, NVIDIA Jetson processing power, and our custom plant detection algorithms, we've created a tool that empowers farmers to make data-driven decisions without breaking the bank.</p>
-            </div>
-            <div class="split-image-side">
-                <img src="images/scanner-in-action.jpg" alt="Harvester II Scanner in Use">
-            </div>
-        </section>
+                    <!-- Our Solution with Product Image -->
+                    <div class="about-card with-image">
+                        <div class="card-text">
+                            <h3>Our Solution</h3>
+                            <p>The Harvester II Hand-held Scanner represents our answer to these challenges. We believe that advanced agricultural technology shouldn't be a luxury reserved for large commercial operations. Our scanner is designed to be:</p>
+                            <ul class="solution-list">
+                                <li><strong>Affordable:</strong> Priced to be accessible to smaller farms without compromising on capability</li>
+                                <li><strong>User-Friendly:</strong> No extensive training or agricultural expertise required—intuitive design that anyone can use</li>
+                                <li><strong>Accurate:</strong> Computer vision technology powered by YOLO models ensures consistent, reliable plant health assessment</li>
+                                <li><strong>Efficient:</strong> Dramatically reduces time spent on manual inspection while improving data quality</li>
+                            </ul>
+                            <p>By combining Intel RealSense depth sensing, NVIDIA Jetson processing power, and our custom plant detection algorithms, we've created a tool that empowers farmers to make data-driven decisions without breaking the bank.</p>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/scanner-in-action.jpg" alt="Harvester II Scanner in Use">
+                            <p class="image-caption">Harvester II in action at a local farm</p>
+                        </div>
+                    </div>
 
-        <!-- Who We Serve Section - Parallax Background -->
-        <section class="about-parallax-section scroll-fade-in">
-            <div class="text-content-wrapper">
-                <h3>Who We Serve</h3>
-                <p>Our primary focus is supporting farms across Singapore—from small urban vertical operations to larger agricultural facilities. We understand that each farm faces unique challenges, which is why our solution is designed to adapt to different scales and types of operations.</p>
-                <p>Whether you're running a rooftop garden, a container farm, or a commercial greenhouse, Harvester II provides the insights you need to optimize your growing operations.</p>
-            </div>
-        </section>
+                    <!-- Who We Serve with Singapore Agriculture Image -->
+                    <div class="about-card with-image reverse">
+                        <div class="card-image">
+                            <img src="images/singapore-farms.jpg" alt="Singapore Urban Farming">
+                            <p class="image-caption">Supporting farms across Singapore</p>
+                        </div>
+                        <div class="card-text">
+                            <h3>Who We Serve</h3>
+                            <p>Our primary focus is supporting farms across Singapore—from small urban vertical operations to larger agricultural facilities. We understand that each farm faces unique challenges, which is why our solution is designed to adapt to different scales and types of operations.</p>
+                            <p>Whether you're running a rooftop garden, a container farm, or a commercial greenhouse, Harvester II provides the insights you need to optimize your growing operations.</p>
+                        </div>
+                    </div>
 
-        <!-- Looking Ahead Section - Image Left, Text Right Dark -->
-        <section class="about-split-fullwidth dark-bg scroll-fade-in">
-            <div class="split-image-side">
-                <img src="images/future-vision.jpg" alt="Technology and Innovation">
-            </div>
-            <div class="split-text-side">
-                <h3>Looking Ahead</h3>
-                <p>While we started with agriculture, our vision extends far beyond farms. The technology behind Harvester II—computer vision, portable hardware, and intuitive data management—has applications across multiple industries. We're actively exploring how our platform can address challenges in inventory management, quality control, environmental monitoring, and more.</p>
-                <p>As we grow, our commitment remains the same: developing affordable, accessible technology that solves real-world problems.</p>
-            </div>
-        </section>
+                    <!-- Looking Ahead with Vision Image -->
+                    <div class="about-card with-image">
+                        <div class="card-text">
+                            <h3>Looking Ahead</h3>
+                            <p>While we started with agriculture, our vision extends far beyond farms. The technology behind Harvester II—computer vision, portable hardware, and intuitive data management—has applications across multiple industries. We're actively exploring how our platform can address challenges in inventory management, quality control, environmental monitoring, and more.</p>
+                            <p>As we grow, our commitment remains the same: developing affordable, accessible technology that solves real-world problems.</p>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/future-vision.jpg" alt="Technology and Innovation">
+                            <p class="image-caption">Expanding beyond agriculture</p>
+                        </div>
+                    </div>
 
-        <!-- Mission Section - Cyan Gradient -->
-        <section class="about-mission-fullwidth scroll-fade-in">
-            <div class="mission-content-wrapper">
-                <h3>Our Mission</h3>
-                <p>To democratize advanced monitoring technology, making precision agriculture accessible to farms of all sizes while supporting Singapore's journey toward food security.</p>
-            </div>
-        </section>
+                    <!-- Mission Card (no image, keep cyan highlight) -->
+                    <div class="about-card mission-card">
+                        <h3>Our Mission</h3>
+                        <p class="mission-statement">To democratize advanced monitoring technology, making precision agriculture accessible to farms of all sizes while supporting Singapore's journey toward food security.</p>
+                    </div>
 
-        <!-- CTA Section -->
-        <section class="about-cta-fullwidth scroll-fade-in">
-            <h3>Join Us in Building the Future</h3>
-            <p>Whether you're a farmer looking to optimize your operations, a researcher interested in collaboration, or simply curious about what we're building, we'd love to hear from you.</p>
-            <div class="cta-buttons-wrapper">
-                <a href="products.html" class="cta-btn-fullwidth primary">Explore Our Products</a>
-                <a href="contact.html" class="cta-btn-fullwidth secondary">Get in Touch</a>
+                    <!-- CTA Section -->
+                    <div class="cta-section">
+                        <h3>Join Us in Building the Future</h3>
+                        <p>Whether you're a farmer looking to optimize your operations, a researcher interested in collaboration, or simply curious about what we're building, we'd love to hear from you.</p>
+                        <div class="cta-buttons">
+                            <a href="products.html" class="cta-btn primary">Explore Our Products</a>
+                            <a href="contact.html" class="cta-btn secondary">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-logo">AeriaLab</h3>
-                    <p class="footer-tagline">Empowering Singapore's Agricultural Future</p>
-                    <p class="footer-description">Advanced monitoring technology for precision agriculture.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Products</h4>
-                    <ul class="footer-links">
-                        <li><a href="scanner-detail.html">Hand-held Scanner</a></li>
-                        <li><a href="ui-detail.html">UI Software</a></li>
-                        <li><a href="rdp-detail.html">Remote Desktop</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-contact">
-                        <li>📧 projectharvester2@gmail.com</li>
-                        <li>📍 Singapore</li>
-                        <li>🏢 Singapore Polytechnic</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 AeriaLab. All rights reserved.</p>
-                <p class="footer-credits">Made in Singapore 🇸🇬</p>
-            </div>
+            <p>&copy; 2024 AeriaLab. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Scroll Animation Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all scroll animation elements
-        document.addEventListener('DOMContentLoaded', function() {
-            const animatedElements = document.querySelectorAll('.scroll-fade-in');
-            
-            animatedElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
-    </script>
 </body>
 </html>
