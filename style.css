@@ -2347,6 +2347,54 @@ footer {
     transform: scale(1);
 }
 
+/* About Page Scroll Animations */
+.about-hero {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.about-hero.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.about-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-card.with-image.visible .card-image img {
+    animation: zoomIn 0.8s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cta-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.cta-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 
