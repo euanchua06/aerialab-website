@@ -2395,6 +2395,371 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+/* ============================================
+   ABOUT PAGE - FULL WIDTH SECTIONS
+   ============================================ */
+
+/* About Page Hero */
+.about-hero {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.about-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 212, 255, 0.3));
+    z-index: 1;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.about-hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Full-Width Split Sections */
+.about-split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+    width: 100%;
+}
+
+.split-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.split-image-container {
+    position: relative;
+    overflow: hidden;
+    background: #e0e0e0;
+}
+
+.split-text-container {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.split-text-container h2 {
+    color: #00d4ff;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.split-text-container p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.split-text-container ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.split-text-container ul li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.split-text-container ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00d4ff;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* White Section */
+.white-section .split-text-container {
+    background: #ffffff;
+    color: #333;
+}
+
+.white-section .split-text-container p {
+    color: #555;
+}
+
+/* Light Section */
+.light-section .split-text-container {
+    background: #f8f8f8;
+    color: #333;
+}
+
+.light-section .split-text-container p {
+    color: #555;
+}
+
+/* Dark Section */
+.dark-section .split-text-container {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-section .split-text-container p {
+    color: #ccc;
+}
+
+/* Full-Width Text Section */
+.about-full-section {
+    width: 100%;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.about-full-section.dark-bg {
+    background: #2a2a2a;
+    color: #ffffff;
+}
+
+.about-full-section.parallax-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('images/singapore-farms.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+.about-full-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.about-full-content h2 {
+    color: #00d4ff;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.about-full-content p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.dark-bg .about-full-content p {
+    color: #ccc;
+}
+
+/* Mission Section - Cyan Gradient */
+.about-mission-section {
+    width: 100%;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    color: white;
+    text-align: center;
+    padding: 120px 40px;
+}
+
+.about-mission-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-mission-content h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-mission-content p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-weight: 300;
+}
+
+/* CTA Section */
+.about-cta-section {
+    width: 100%;
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 100px 40px;
+}
+
+.about-cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.about-cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.about-cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-cta-btn {
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.about-cta-btn.primary {
+    background: #00d4ff;
+    color: #000;
+}
+
+.about-cta-btn.primary:hover {
+    background: #00b8e6;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.about-cta-btn.secondary {
+    background: transparent;
+    color: #00d4ff;
+    border: 2px solid #00d4ff;
+}
+
+.about-cta-btn.secondary:hover {
+    background: #00d4ff;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .about-hero {
+        height: 400px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .about-split-section {
+        grid-template-columns: 1fr;
+    }
+
+    .split-image-container {
+        min-height: 400px;
+    }
+
+    .split-text-container {
+        padding: 60px 30px;
+    }
+
+    .split-text-container h2 {
+        font-size: 2.2rem;
+    }
+
+    /* Always show image first on mobile */
+    .about-split-section .split-image-container {
+        order: 1;
+    }
+
+    .about-split-section .split-text-container {
+        order: 2;
+    }
+
+    .about-full-content h2,
+    .about-mission-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-full-content p,
+    .about-mission-content p {
+        font-size: 1.1rem;
+    }
+
+    .about-full-section.parallax-bg {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .about-hero-content p {
+        font-size: 1rem;
+    }
+
+    .split-text-container {
+        padding: 40px 20px;
+    }
+
+    .about-full-section,
+    .about-mission-section,
+    .about-cta-section {
+        padding: 60px 20px;
+    }
+
+    .about-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-cta-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
 
 
 
