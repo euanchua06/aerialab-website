@@ -2003,6 +2003,75 @@ nav .container {
         width: 100%;
     }
 }
+/* ========================================
+   SCROLL ANIMATIONS
+   ======================================== */
+
+/* Hidden state - before scrolling into view */
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Visible state - after scrolling into view */
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay variations for staggered animations */
+.scroll-fade-in.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.scroll-fade-in.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.scroll-fade-in.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.scroll-fade-in.delay-4 {
+    transition-delay: 0.4s;
+}
+
+/* Slide from left */
+.scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide from right */
+.scroll-slide-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale up animation */
+.scroll-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
 
 
 
