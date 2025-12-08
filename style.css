@@ -1303,7 +1303,7 @@ footer {
     }
 }
 
-/* About Us Page */
+/* About Us Page (OLD CARD VERSION - KEEP FOR BACKUP) */
 .about-section {
     padding: 60px 20px;
     min-height: calc(100vh - 200px);
@@ -2347,68 +2347,369 @@ footer {
     transform: scale(1);
 }
 
-/* About Page Scroll Animations */
-.about-hero {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+/* ============================================
+   ABOUT PAGE - FULL WIDTH DESIGN
+   ============================================ */
+
+/* About Hero Section */
+.about-hero-fullwidth {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
 }
 
-.about-hero.visible {
-    opacity: 1;
-    transform: translateY(0);
+.about-hero-fullwidth img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.about-card {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
+.about-hero-fullwidth .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 212, 255, 0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.about-card.visible {
-    opacity: 1;
-    transform: translateY(0);
+.about-hero-fullwidth .hero-content {
+    max-width: 800px;
+    padding: 0 20px;
 }
 
-.about-card.with-image.visible .card-image img {
-    animation: zoomIn 0.8s ease-out;
+.about-hero-fullwidth .hero-content h2 {
+    color: #ffffff;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes zoomIn {
-    from {
-        transform: scale(0.95);
-        opacity: 0;
+.about-hero-fullwidth .hero-content p {
+    color: #00d4ff;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Full-Width Split Sections */
+.about-split-fullwidth {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    min-height: 600px;
+}
+
+.about-split-fullwidth .split-image-side {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.about-split-fullwidth .split-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-split-fullwidth .split-text-side {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-split-fullwidth .split-text-side h3 {
+    color: #00d4ff;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.about-split-fullwidth .split-text-side p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.about-split-fullwidth .split-text-side ul {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.about-split-fullwidth .split-text-side ul li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.about-split-fullwidth .split-text-side ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00d4ff;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Background Variations */
+.about-split-fullwidth.white-bg .split-text-side {
+    background: #ffffff;
+    color: #333;
+}
+
+.about-split-fullwidth.white-bg .split-text-side p,
+.about-split-fullwidth.white-bg .split-text-side ul li {
+    color: #555;
+}
+
+.about-split-fullwidth.light-bg .split-text-side {
+    background: #f8f8f8;
+    color: #333;
+}
+
+.about-split-fullwidth.light-bg .split-text-side p,
+.about-split-fullwidth.light-bg .split-text-side ul li {
+    color: #555;
+}
+
+.about-split-fullwidth.dark-bg .split-text-side {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.about-split-fullwidth.dark-bg .split-text-side p,
+.about-split-fullwidth.dark-bg .split-text-side ul li {
+    color: #ccc;
+}
+
+/* Full-Width Text Only Section */
+.about-fulltext-section {
+    width: 100%;
+    padding: 100px 20px;
+    text-align: center;
+    background: #2a2a2a;
+}
+
+.about-fulltext-section .text-content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-fulltext-section h3 {
+    color: #00d4ff;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.about-fulltext-section p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: #ccc;
+}
+
+/* Parallax Section */
+.about-parallax-section {
+    width: 100%;
+    padding: 120px 20px;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('images/singapore-farms.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+.about-parallax-section .text-content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-parallax-section h3 {
+    color: #00d4ff;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.about-parallax-section p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+/* Mission Section Fullwidth */
+.about-mission-fullwidth {
+    width: 100%;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    padding: 120px 40px;
+    text-align: center;
+}
+
+.about-mission-fullwidth .mission-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-mission-fullwidth h3 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 800;
+    color: #000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-mission-fullwidth p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-weight: 300;
+}
+
+/* CTA Section Fullwidth */
+.about-cta-fullwidth {
+    width: 100%;
+    background: #1a1a1a;
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.about-cta-fullwidth h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.about-cta-fullwidth p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.about-cta-fullwidth .cta-buttons-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-cta-fullwidth .cta-btn-fullwidth {
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.about-cta-fullwidth .cta-btn-fullwidth.primary {
+    background: #00d4ff;
+    color: #000;
+}
+
+.about-cta-fullwidth .cta-btn-fullwidth.primary:hover {
+    background: #00b8e6;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.about-cta-fullwidth .cta-btn-fullwidth.secondary {
+    background: transparent;
+    color: #00d4ff;
+    border: 2px solid #00d4ff;
+}
+
+.about-cta-fullwidth .cta-btn-fullwidth.secondary:hover {
+    background: #00d4ff;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .about-hero-fullwidth {
+        height: 400px;
     }
-    to {
-        transform: scale(1);
-        opacity: 1;
+
+    .about-hero-fullwidth .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-hero-fullwidth .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .about-split-fullwidth {
+        grid-template-columns: 1fr;
+    }
+
+    .about-split-fullwidth .split-image-side {
+        min-height: 400px;
+    }
+
+    .about-split-fullwidth .split-text-side {
+        padding: 60px 30px;
+    }
+
+    .about-split-fullwidth .split-text-side h3,
+    .about-fulltext-section h3,
+    .about-parallax-section h3 {
+        font-size: 2.2rem;
+    }
+
+    .about-mission-fullwidth h3 {
+        font-size: 2.2rem;
+    }
+
+    .about-parallax-section {
+        background-attachment: scroll;
     }
 }
 
-.cta-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+@media (max-width: 640px) {
+    .about-hero-fullwidth .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-hero-fullwidth .hero-content p {
+        font-size: 1rem;
+    }
+
+    .about-split-fullwidth .split-text-side {
+        padding: 40px 20px;
+    }
+
+    .about-fulltext-section,
+    .about-parallax-section,
+    .about-mission-fullwidth,
+    .about-cta-fullwidth {
+        padding: 60px 20px;
+    }
+
+    .about-cta-fullwidth .cta-buttons-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-cta-fullwidth .cta-btn-fullwidth {
+        width: 100%;
+        max-width: 300px;
+    }
 }
-
-.cta-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
