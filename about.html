@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="Learn about AeriaLab's mission to support Singapore's food security through innovative agricultural technology">
-    <link rel="stylesheet" href="style.css">
     <style>
         /* Page Load Animation */
         body {
@@ -182,9 +181,36 @@
             </div>
         </div>
     </footer>
-</body>
 
+    <script>
+        // Scroll Animation Observer for About Page
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll(
+                '.about-hero, .about-card, .cta-section'
+            );
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
 </html>
+
 
 
 
