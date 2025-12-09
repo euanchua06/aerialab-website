@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
     <style>
         /* Page Load Animation */
         body {
@@ -21,6 +20,71 @@
                 opacity: 1;
             }
         }
+
+        /* Enhanced Spec Text Styling */
+        .spec-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .spec-text ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .spec-text ul li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .spec-text strong {
+            color: #00d4ff;
+            font-weight: 600;
+        }
+
+        .spec-section {
+            margin-bottom: 30px;
+        }
+
+        .spec-section-title {
+            font-size: 1.4rem;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spec-subsection {
+            margin-bottom: 20px;
+        }
+
+        .spec-subsection h5 {
+            color: #ffffff;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .spec-highlight {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 15px;
+            border-left: 3px solid #00d4ff;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .spec-highlight p {
+            margin: 5px 0;
+            line-height: 1.7;
+        }
     </style>
 </head>
 <body>
@@ -30,13 +94,14 @@
                 <h1 class="logo"><a href="index.html">AeriaLab</a></h1>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="products.html">Products</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
     </header>
+
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
@@ -51,23 +116,23 @@
     <main>
         <section class="product-detail-section">
             <div class="container">
+                <h2>Hand-held Scanner</h2>
+                
+                <!-- Product Detail Card with Gallery -->
                 <div class="product-detail-card">
-                    <!-- Left Side: Photo Gallery -->
+                    <!-- Photo Gallery -->
                     <div class="product-gallery">
                         <div class="gallery-main">
-                            <button class="gallery-arrow gallery-arrow-left" onclick="changeSlide(-1)">‹</button>
-                            
                             <div class="gallery-images">
-                                <img src="images/scanner.jpg" alt="Hand-held Scanner" class="gallery-slide active">
-                                <img src="images/scanner-detail-2.jpg" alt="Hand-held Scanner" class="gallery-slide">
-                                <img src="images/scanner-detail-3.jpg" alt="Hand-held Scanner" class="gallery-slide">
-                                <img src="images/scanner-detail-4.jpg" alt="Hand-held Scanner" class="gallery-slide">
-                                <img src="images/scanner-detail-5.jpg" alt="Hand-held Scanner" class="gallery-slide">
+                                <img src="images/scanner-detail-1.jpg" alt="Hand-held Scanner View 1" class="gallery-slide active">
+                                <img src="images/scanner-detail-2.jpg" alt="Hand-held Scanner View 2" class="gallery-slide">
+                                <img src="images/scanner-detail-3.jpg" alt="Hand-held Scanner View 3" class="gallery-slide">
+                                <img src="images/scanner-detail-4.jpg" alt="Hand-held Scanner View 4" class="gallery-slide">
+                                <img src="images/scanner-detail-5.jpg" alt="Hand-held Scanner View 5" class="gallery-slide">
                             </div>
-                            
+                            <button class="gallery-arrow gallery-arrow-left" onclick="changeSlide(-1)">‹</button>
                             <button class="gallery-arrow gallery-arrow-right" onclick="changeSlide(1)">›</button>
                         </div>
-                        
                         <div class="gallery-dots">
                             <span class="dot active" onclick="currentSlide(1)"></span>
                             <span class="dot" onclick="currentSlide(2)"></span>
@@ -77,18 +142,15 @@
                         </div>
                     </div>
 
-                    <!-- Right Side: Main Info -->
+                    <!-- Main Info -->
                     <div class="product-main-info">
-                        <h2>Hand-held Scanner</h2>
-                        
+                        <h2>Harvester II Hand-held Scanner</h2>
                         <div class="product-description">
-                            <p>Our All-in-one hand-held Scanner allows quick and easy collection of information in various use cases.</p>
+                            <p>The all-in-one portable scanning solution for quick information collection in the field. Powered by Intel RealSense depth sensing and NVIDIA Jetson processing, this handheld device brings professional plant health monitoring to any farm operation.</p>
                         </div>
-
                         <div class="product-pricing">
                             <div class="price-tag">$20.00</div>
                         </div>
-
                         <a href="checkout-scanner.html" class="buy-now-btn">Buy Now</a>
                     </div>
                 </div>
@@ -98,109 +160,397 @@
                     <div class="specs-background">
                         <h3>Hardware Specifications</h3>
                         
+                        <!-- Tabs -->
                         <div class="specs-tabs">
-                            <button class="spec-tab active" onclick="showSpec('jetson')">Jetson Nano Orin</button>
+                            <button class="spec-tab active" onclick="showSpec('jetson')">NVIDIA Jetson Nano Orin</button>
                             <button class="spec-tab" onclick="showSpec('realsense')">Intel RealSense D435i</button>
                             <button class="spec-tab" onclick="showSpec('powerbank')">Anker Zolo Power Bank</button>
                         </div>
 
+                        <!-- Spec Panels -->
                         <div class="specs-content">
-                            <!-- Jetson Nano Tab -->
-                            <div id="jetson-spec" class="spec-panel active">
+                            <!-- Jetson Nano Orin Panel -->
+                            <div class="spec-panel active" id="jetson">
                                 <div class="spec-image">
-                                    <img src="images/jetson.png" alt="Jetson Nano Orin">
+                                    <img src="images/jetson.png" alt="NVIDIA Jetson Nano Orin">
                                 </div>
                                 <div class="spec-text">
-                                    <h4>Jetson Nano Orin</h4>
-                                    <p>Jetson Nano Orin specifications and details will go here.</p>
+                                    <h4>NVIDIA Jetson Nano Orin</h4>
+                                    
+                                    <!-- Performance Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">🚀 Performance</div>
+                                        
+                                        <div class="spec-subsection">
+                                            <h5>AI Compute</h5>
+                                            <ul>
+                                                <li>Up to <strong>40 TOPS</strong> AI performance</li>
+                                                <li><strong>NVIDIA Ampere™</strong> GPU architecture</li>
+                                                <li>Up to <strong>1024 CUDA cores</strong></li>
+                                                <li>Up to <strong>32 Tensor Cores</strong></li>
+                                            </ul>
+                                            <div class="spec-highlight">
+                                                <p>Ideal for running YOLO models, segmentation, and multi-camera analytics in real time</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="spec-subsection">
+                                            <h5>CPU</h5>
+                                            <ul>
+                                                <li><strong>6-core</strong> Arm® Cortex-A78AE</li>
+                                                <li><strong>64-bit</strong> architecture</li>
+                                                <li><strong>1.5 MB L2</strong> + <strong>4 MB L3</strong> cache</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Memory & Storage Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">💾 Memory & Storage</div>
+                                        
+                                        <div class="spec-subsection">
+                                            <h5>Memory Options</h5>
+                                            <ul>
+                                                <li><strong>8 GB LPDDR5</strong> (128-bit, ~68 GB/s bandwidth)</li>
+                                                <li><strong>4 GB LPDDR5</strong> (64-bit, ~34 GB/s bandwidth)</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="spec-subsection">
+                                            <h5>Storage</h5>
+                                            <ul>
+                                                <li>microSD card support</li>
+                                                <li>NVMe SSD support via M.2 slot (on compatible carrier boards)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Camera & Sensor Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">📸 Camera & Sensor Connectivity</div>
+                                        <ul>
+                                            <li>Up to <strong>2× MIPI-CSI</strong> camera inputs</li>
+                                            <li>Supports high-resolution imaging for AI vision</li>
+                                            <li>Interfaces for environmental sensors:
+                                                <ul style="margin-left: 20px; margin-top: 8px;">
+                                                    <li>I²C, SPI, UART</li>
+                                                    <li>GPIO</li>
+                                                    <li>USB 3.0 & 2.0</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <div class="spec-highlight">
+                                            <p>Ideal for multi-sensor farm monitoring setups</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Power Efficiency Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">🔌 Power Efficiency</div>
+                                        <ul>
+                                            <li>Configurable power modes</li>
+                                            <li>Typical operating range: <strong>7 W – 15 W</strong></li>
+                                        </ul>
+                                        <div class="spec-highlight">
+                                            <p>Low-power design perfect for handheld scanners, portable devices, and 24/7 farm operation</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Connectivity Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">🌐 Connectivity & I/O</div>
+                                        <ul>
+                                            <li>Gigabit Ethernet</li>
+                                            <li>USB 3.0 ports</li>
+                                            <li>40-pin GPIO header</li>
+                                            <li>PCIe interface</li>
+                                            <li>HDMI or DisplayPort output (depending on carrier board)</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Thermal Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">🧊 Thermal & Mechanical</div>
+                                        <ul>
+                                            <li>Compact form factor</li>
+                                            <li>Passive or active cooling supported</li>
+                                            <li>Designed for embedded environments</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Key Advantages Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">🧠 Key Advantages for Smart Agriculture</div>
+                                        <ul>
+                                            <li>Real-time plant health detection</li>
+                                            <li>Faster inference speeds</li>
+                                            <li>Efficient power use for continuous scanning</li>
+                                            <li>Reliable for indoor, greenhouse, or vertical farm systems</li>
+                                            <li>Supports multi-camera setups for high-coverage imaging</li>
+                                            <li>Handles advanced ML tasks like ripeness detection, disease spotting, and environment monitoring</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- RealSense Tab -->
-                            <div id="realsense-spec" class="spec-panel">
+                            <!-- Intel RealSense D435i Panel -->
+                            <div class="spec-panel" id="realsense">
                                 <div class="spec-image">
                                     <img src="images/realsense.png" alt="Intel RealSense D435i">
                                 </div>
                                 <div class="spec-text">
                                     <h4>Intel RealSense D435i</h4>
-                                    <p>Intel RealSense D435i specifications and details will go here.</p>
+                                    
+                                    <!-- Imaging & Depth Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">📸 Imaging & Depth Sensing</div>
+                                        
+                                        <div class="spec-subsection">
+                                            <h5>Depth Camera</h5>
+                                            <ul>
+                                                <li><strong>Global Shutter</strong> stereo depth sensors</li>
+                                                <li>Depth resolution up to <strong>1280 × 720 @ 30 FPS</strong></li>
+                                                <li>Up to <strong>90 FPS</strong> at lower resolutions</li>
+                                                <li>Depth range: <strong>0.1 m – 10 m</strong></li>
+                                                <li>Wide field of view:
+                                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                                        <li>Depth FOV: <strong>~87° × 58° × 95°</strong> (Diagonal)</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="spec-subsection">
+                                            <h5>RGB Camera</h5>
+                                            <ul>
+                                                <li><strong>1920 × 1080</strong> resolution</li>
+                                                <li><strong>30 FPS</strong></li>
+                                                <li>Rolling shutter</li>
+                                                <li>Built-in color camera for aligned RGB + depth processing</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- IMU Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">🧭 Inertial Measurement Unit (IMU)</div>
+                                        
+                                        <div class="spec-subsection">
+                                            <h5>Integrated IMU</h5>
+                                            <ul>
+                                                <li><strong>6-axis IMU</strong> (3-axis accelerometer + 3-axis gyroscope)</li>
+                                                <li>High-frequency motion data for:
+                                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                                        <li>Camera stabilization</li>
+                                                        <li>Handheld scanner accuracy</li>
+                                                        <li>Motion tracking</li>
+                                                        <li>Simultaneous Localization and Mapping (SLAM)</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Performance Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">🚀 Performance & Processing</div>
+                                        
+                                        <div class="spec-subsection">
+                                            <h5>Depth Technology</h5>
+                                            <ul>
+                                                <li><strong>Intel RealSense Vision ASIC</strong></li>
+                                                <li>Stereoscopic depth computation</li>
+                                                <li>On-device depth processing for reduced CPU load</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="spec-subsection">
+                                            <h5>Frame Sync</h5>
+                                            <ul>
+                                                <li>Hardware sync support for multi-camera setups</li>
+                                            </ul>
+                                            <div class="spec-highlight">
+                                                <p>Ideal for robotics and multi-angle plant scanning</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Connectivity Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">🔌 Connectivity & Power</div>
+                                        
+                                        <div class="spec-subsection">
+                                            <h5>Interface</h5>
+                                            <ul>
+                                                <li><strong>USB-C 3.1 Gen 1</strong></li>
+                                                <li>Plug-and-play compatible with Jetson and PC platforms</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="spec-subsection">
+                                            <h5>Power Consumption</h5>
+                                            <ul>
+                                                <li>Typically <strong>&lt; 2 W</strong> while operating</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mechanical Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">🧊 Mechanical & Build</div>
+                                        
+                                        <div class="spec-subsection">
+                                            <h5>Camera Body</h5>
+                                            <ul>
+                                                <li>Lightweight <strong>aluminium frame</strong></li>
+                                                <li>Compact form factor: <strong>90 mm × 25 mm × 25 mm</strong></li>
+                                                <li>Weight: <strong>~72 g</strong></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="spec-subsection">
+                                            <h5>Mounting</h5>
+                                            <ul>
+                                                <li>Standard tripod mount (¼-20)</li>
+                                                <li>Multiple third-party enclosures available for farm environments</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Key Advantages Section -->
+                                    <div class="spec-section">
+                                        <div class="spec-section-title">🌱 Key Advantages for Smart Farming</div>
+                                        <ul>
+                                            <li>Accurate depth perception for leaf size, plant spacing, and height measurement</li>
+                                            <li>Wide FOV ideal for capturing entire plants or rows</li>
+                                            <li>IMU enables stable handheld scanning and movement correction</li>
+                                            <li>Works in indoor farm lighting conditions (LED grow lights, artificial lighting)</li>
+                                            <li>Fast USB-C connection ensures low-latency detections</li>
+                                            <li>Reliable for ripeness detection, counting plants, morphology analysis, and growth tracking</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Power Bank Tab -->
-                            <div id="powerbank-spec" class="spec-panel">
+                            <!-- Anker Zolo Power Bank Panel -->
+                            <div class="spec-panel" id="powerbank">
                                 <div class="spec-image">
                                     <img src="images/powerbank.png" alt="Anker Zolo Power Bank">
                                 </div>
                                 <div class="spec-text">
                                     <h4>Anker Zolo Power Bank</h4>
-                                    <p>Anker Zolo Power Bank specifications and details will go here.</p>
+                                    <p>Reliable portable power solution for extended field operations. The Anker Zolo Power Bank provides consistent, high-capacity charging to keep your scanner running throughout long work sessions in the field.</p>
+                                    <p><strong>Key Features:</strong></p>
+                                    <ul>
+                                        <li>High-capacity battery for all-day scanning</li>
+                                        <li>Fast charging support for quick turnaround</li>
+                                        <li>Multiple USB ports for simultaneous device charging</li>
+                                        <li>Compact and lightweight design</li>
+                                        <li>Durable construction for farm environments</li>
+                                        <li>LED power indicator for battery status monitoring</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="products.html" class="back-to-products-btn">Back to Products</a>
+                <a href="products.html" class="back-to-products-btn">← Back to Products</a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 AeriaLab. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">AeriaLab</h3>
+                    <p class="footer-tagline">Empowering Singapore's Agricultural Future</p>
+                    <p class="footer-description">Advanced monitoring technology for precision agriculture.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="scanner-detail.html">Hand-held Scanner</a></li>
+                        <li><a href="ui-detail.html">UI Software</a></li>
+                        <li><a href="rdp-detail.html">Remote Desktop</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>📧 projectharvester2@gmail.com</li>
+                        <li>📍 Singapore</li>
+                        <li>🏢 Singapore Polytechnic</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 AeriaLab. All rights reserved.</p>
+                <p class="footer-credits">Made in Singapore 🇸🇬</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        let slideIndex = 1;
-        showSlide(slideIndex);
+        let currentSlideIndex = 1;
+        showSlide(currentSlideIndex);
 
         function changeSlide(n) {
-            showSlide(slideIndex += n);
+            showSlide(currentSlideIndex += n);
         }
 
         function currentSlide(n) {
-            showSlide(slideIndex = n);
+            showSlide(currentSlideIndex = n);
         }
 
         function showSlide(n) {
-            const slides = document.getElementsByClassName("gallery-slide");
-            const dots = document.getElementsByClassName("dot");
+            let slides = document.getElementsByClassName("gallery-slide");
+            let dots = document.getElementsByClassName("dot");
             
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
+            if (n > slides.length) { currentSlideIndex = 1 }
+            if (n < 1) { currentSlideIndex = slides.length }
             
-            // Hide all slides
             for (let i = 0; i < slides.length; i++) {
                 slides[i].classList.remove("active");
             }
-            
-            // Remove active from all dots
             for (let i = 0; i < dots.length; i++) {
                 dots[i].classList.remove("active");
             }
             
-            // Show current slide and dot
-            slides[slideIndex - 1].classList.add("active");
-            dots[slideIndex - 1].classList.add("active");
+            slides[currentSlideIndex - 1].classList.add("active");
+            dots[currentSlideIndex - 1].classList.add("active");
         }
-        // Hardware Specs Tab Functionality
+
+        // Hardware Specs Tabs
         function showSpec(specName) {
-            // Hide all spec panels
-            const panels = document.getElementsByClassName('spec-panel');
-            for (let i = 0; i < panels.length; i++) {
-                panels[i].classList.remove('active');
-            }
+            // Hide all panels
+            const panels = document.querySelectorAll('.spec-panel');
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
             
             // Remove active class from all tabs
-            const tabs = document.getElementsByClassName('spec-tab');
-            for (let i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove('active');
-            }
+            const tabs = document.querySelectorAll('.spec-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
             
             // Show selected panel
-            document.getElementById(specName + '-spec').classList.add('active');
+            document.getElementById(specName).classList.add('active');
             
             // Add active class to clicked tab
             event.target.classList.add('active');
@@ -208,7 +558,3 @@
     </script>
 </body>
 </html>
-
-
-
-
