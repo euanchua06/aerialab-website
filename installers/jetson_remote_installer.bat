@@ -19,16 +19,16 @@ echo Running with administrator privileges...
 echo.
 timeout /t 2 /nobreak >nul
 
-:: Show setup instructions
+:: Prompt for IP address with validation loop
+:IP_INPUT
 cls
 echo ============================================
 echo  SETUP INSTRUCTIONS
 echo ============================================
 echo.
-echo Before continuing, please complete these steps on your Jetson Nano:
+echo Before continuing, complete these steps on your Jetson Nano:
 echo.
 echo  1. Connect your Jetson Nano to the SAME network as this laptop
-echo     (via Ethernet or WiFi)
 echo.
 echo  2. Open a terminal on the Jetson Nano
 echo.
@@ -38,29 +38,17 @@ echo  4. Note the IP address shown (example: 192.168.1.100)
 echo.
 echo ============================================
 echo.
-echo Press any key once you have the Jetson's IP address ready...
-pause >nul
-
-:: Prompt for IP address with validation loop
-:IP_INPUT
-cls
-echo ============================================
-echo  Enter Jetson Nano IP AddressTEST
-echo ============================================
-echo.
-set /p JETSON_IP="Enter the IP address from your Jetson Nano: "
+set /p JETSON_IP="Enter the IP address from your Jetson NanoTEST: "
 
 :: Validate IP format (basic check)
 echo.
 echo Validating IP address format...
-echo %JETSON_IP% | findstr /r "^[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*$" >nul
+echo %JETSON_IP% | findstr /r "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" >nul
 if %errorLevel% neq 0 (
     echo.
     echo ERROR: Invalid IP address format!
     echo Please enter a valid IP address like: 192.168.1.100
-    echo.
-    echo Press any key to try again...
-    pause >nul
+    timeout /t 3 /nobreak >nul
     goto IP_INPUT
 )
 
