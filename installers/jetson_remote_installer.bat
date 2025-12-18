@@ -53,7 +53,7 @@ set /p JETSON_IP="Enter the IP address from your Jetson Nano: "
 :: Validate IP format (basic check)
 echo.
 echo Validating IP address format...
-echo %JETSON_IP% | findstr /r "^[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*$" >nul
+echo %JETSON_IP% | findstr /r "^[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*$" >nul
 if %errorLevel% neq 0 (
     echo.
     echo ERROR: Invalid IP address format!
