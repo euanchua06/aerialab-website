@@ -38,7 +38,7 @@ echo  4. Note the IP address shown (example: 192.168.1.100)
 echo.
 echo ============================================
 echo.
-set /p JETSON_IP="Enter the IP address from your Jetson NanoTEST: "
+set /p JETSON_IP="Enter the IP address from your Jetson Nano: "
 
 :: Validate IP format (basic check)
 echo.
@@ -68,7 +68,7 @@ echo       Created fresh C:\Scripts directory
 echo.
 
 :: Create connection batch file with user-provided IP
-echo [2/3] Installing connect_jetson.bat...
+echo [2/4] Installing connect_jetson.bat...
 (
 echo @echo off
 echo echo Connecting to Jetson Nano at %JETSON_IP%...
@@ -77,8 +77,56 @@ echo mstsc /v:%JETSON_IP%
 echo       Installed connect_jetson.bat with IP: %JETSON_IP%
 echo.
 
+:: Create IP change utility
+echo [3/4] Installing change_ip.bat...
+(
+echo @echo off
+echo :IP_INPUT
+echo cls
+echo ============================================
+echo  Change Jetson Nano IP Address
+echo ============================================
+echo.
+echo Current IP configuration will be updated.
+echo.
+echo Enter the new IP address for your Jetson Nano.
+echo If you need to find it, run this on the Jetson:  hostname -I
+echo.
+set /p NEW_IP="Enter new IP address: "
+echo.
+echo Validating IP address format...
+echo %%NEW_IP%% ^| findstr /r "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" ^>nul
+echo if %%errorLevel%% neq 0 ^(
+echo     echo.
+echo     echo ERROR: Invalid IP address format!
+echo     echo Please enter a valid IP address like: 192.168.1.100
+echo     timeout /t 3 /nobreak ^>nul
+echo     goto IP_INPUT
+echo ^)
+echo.
+echo Updating connection script with new IP: %%NEW_IP%%...
+echo ^(
+echo echo @echo off
+echo echo echo Connecting to Jetson Nano at %%NEW_IP%%...
+echo echo mstsc /v:%%NEW_IP%%
+echo ^) ^> "C:\Scripts\connect_jetson.bat"
+echo.
+echo ============================================
+echo  IP Address Updated Successfully!
+echo ============================================
+echo.
+echo New IP address: %%NEW_IP%%
+echo.
+echo You can now use 'connect_jetson' to connect to the new IP.
+echo.
+echo Press any key to close...
+echo pause ^>nul
+) > "C:\Scripts\change_ip.bat"
+echo       Installed change_ip.bat
+echo.
+
 :: Add to PATH
-echo [3/3] Adding C:\Scripts to system PATH...
+echo [4/4] Adding C:\Scripts to system PATH...
 powershell -Command "$currentPath = [Environment]::GetEnvironmentVariable('Path', 'Machine'); if ($currentPath -notlike '*C:\Scripts*') { [Environment]::SetEnvironmentVariable('Path', $currentPath + ';C:\Scripts', 'Machine'); echo '      Added to PATH' } else { echo '      Already in PATH' }"
 echo.
 
@@ -100,11 +148,15 @@ echo  2. Open a NEW Command Prompt (no admin rights needed)
 echo  3. Type: connect_jetson
 echo  4. Press Enter
 echo  5. Remote Desktop will connect to %JETSON_IP%
+echo.
 echo ============================================
+echo  How to Change the IP Address Later:
+echo ============================================
+echo  If your Jetson's IP changes, simply run:
 echo.
-echo NOTE: If your Jetson's IP address changes, simply run this
-echo       installer again and enter the new IP address.
+echo     change_ip
 echo.
+echo  This will prompt you for the new IP address.
 echo ============================================
 echo Press any key to close this installer...
 pause >nul
