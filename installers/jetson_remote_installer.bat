@@ -45,7 +45,7 @@ pause >nul
 :IP_INPUT
 cls
 echo ============================================
-echo  Enter Jetson Nano IP Address
+echo  Enter Jetson Nano IP AddressTEST
 echo ============================================
 echo.
 set /p JETSON_IP="Enter the IP address from your Jetson Nano: "
