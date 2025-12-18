@@ -82,7 +82,7 @@ echo [3/3] Installing change_ip.bat...
 (
 echo @echo off
 echo echo Launching Jetson IP updater...
-echo powershell -Command "Start-Process '%~f0' -Verb RunAs"
+echo powershell -Command "Start-Process 'C:\Scripts\jetson_installer.bat' -Verb RunAs"
 ) > "C:\Scripts\change_ip.bat"
 echo       Installed change_ip.bat
 echo.
@@ -91,15 +91,6 @@ echo.
 echo Saving installer to C:\Scripts...
 copy "%~f0" "C:\Scripts\jetson_installer.bat" >nul
 echo       Installer saved
-echo.
-
-:: Update change_ip to point to saved installer
-(
-echo @echo off
-echo echo Launching Jetson IP updater...
-echo powershell -Command "Start-Process 'C:\Scripts\jetson_installer.bat' -Verb RunAs"
-) > "C:\Scripts\change_ip.bat"
-echo       change_ip.bat configured
 echo.
 
 :: Add to PATH
