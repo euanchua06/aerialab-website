@@ -68,7 +68,7 @@ echo       Created fresh C:\Scripts directory
 echo.
 
 :: Create connection batch file with user-provided IP
-echo [2/4] Installing connect_jetson.bat...
+echo [2/3] Installing connect_jetson.bat...
 (
 echo @echo off
 echo echo Connecting to Jetson Nano at %JETSON_IP%...
@@ -77,52 +77,29 @@ echo mstsc /v:%JETSON_IP%
 echo       Installed connect_jetson.bat with IP: %JETSON_IP%
 echo.
 
-:: Create IP change utility
-echo [3/4] Installing change_ip.bat...
+:: Create change_ip shortcut that runs the installer again
+echo [3/3] Installing change_ip.bat...
 (
 echo @echo off
-echo :IP_INPUT
-echo cls
-echo ============================================
-echo  Change Jetson Nano IP Address
-echo ============================================
-echo.
-echo Current IP configuration will be updated.
-echo.
-echo Enter the new IP address for your Jetson Nano.
-echo If you need to find it, run this on the Jetson:  hostname -I
-echo.
-set /p NEW_IP="Enter new IP address: "
-echo.
-echo Validating IP address format...
-echo %%NEW_IP%% ^| findstr /r "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" ^>nul
-echo if %%errorLevel%% neq 0 ^(
-echo     echo.
-echo     echo ERROR: Invalid IP address format!
-echo     echo Please enter a valid IP address like: 192.168.1.100
-echo     timeout /t 3 /nobreak ^>nul
-echo     goto IP_INPUT
-echo ^)
-echo.
-echo Updating connection script with new IP: %%NEW_IP%%...
-echo ^(
-echo echo @echo off
-echo echo echo Connecting to Jetson Nano at %%NEW_IP%%...
-echo echo mstsc /v:%%NEW_IP%%
-echo ^) ^> "C:\Scripts\connect_jetson.bat"
-echo.
-echo ============================================
-echo  IP Address Updated Successfully!
-echo ============================================
-echo.
-echo New IP address: %%NEW_IP%%
-echo.
-echo You can now use 'connect_jetson' to connect to the new IP.
-echo.
-echo Press any key to close...
-echo pause ^>nul
+echo echo Launching Jetson IP updater...
+echo powershell -Command "Start-Process '%~f0' -Verb RunAs"
 ) > "C:\Scripts\change_ip.bat"
 echo       Installed change_ip.bat
+echo.
+
+:: Copy installer to C:\Scripts for future use
+echo Saving installer to C:\Scripts...
+copy "%~f0" "C:\Scripts\jetson_installer.bat" >nul
+echo       Installer saved
+echo.
+
+:: Update change_ip to point to saved installer
+(
+echo @echo off
+echo echo Launching Jetson IP updater...
+echo powershell -Command "Start-Process 'C:\Scripts\jetson_installer.bat' -Verb RunAs"
+) > "C:\Scripts\change_ip.bat"
+echo       change_ip.bat configured
 echo.
 
 :: Add to PATH
