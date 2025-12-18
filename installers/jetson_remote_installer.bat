@@ -41,7 +41,8 @@ echo.
 echo Press any key once you have the Jetson's IP address ready...
 pause >nul
 
-:: Prompt for IP address
+:: Prompt for IP address with validation loop
+:IP_INPUT
 cls
 echo ============================================
 echo  Enter Jetson Nano IP Address
@@ -58,8 +59,9 @@ if %errorLevel% neq 0 (
     echo ERROR: Invalid IP address format!
     echo Please enter a valid IP address like: 192.168.1.100
     echo.
-    pause
-    exit /b
+    echo Press any key to try again...
+    pause >nul
+    goto IP_INPUT
 )
 
 echo IP address format valid: %JETSON_IP%
