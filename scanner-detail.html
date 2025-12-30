@@ -106,6 +106,58 @@
             object-position: left;
         }
 
+        /* Need More Info Section */
+        .need-info-section {
+            margin: 80px 0 60px 0;
+            padding: 60px 50px;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .info-content h3 {
+            color: #000;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .info-content p {
+            color: #000;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-highlight {
+            font-size: 1.2rem !important;
+            font-weight: 600;
+            margin-bottom: 30px !important;
+        }
+
+        .contact-us-btn {
+            display: inline-block;
+            background: #000;
+            color: #00d4ff;
+            padding: 18px 50px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-us-btn:hover {
+            background: #1a1a1a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .software-overview-section {
@@ -115,6 +167,24 @@
             .screenshot-grid {
                 grid-template-columns: 1fr;
                 gap: 25px;
+            }
+
+            .need-info-section {
+                padding: 40px 25px;
+            }
+
+            .info-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .info-content p,
+            .info-highlight {
+                font-size: 1rem !important;
+            }
+
+            .contact-us-btn {
+                width: 100%;
+                padding: 16px 40px;
             }
         }
     </style>
@@ -362,6 +432,16 @@
                                 <p>Create and manage team members with role-based access (Admin, Manager, Worker), password reset capabilities, and user deletion controls.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Need More Info Section -->
+                <div class="need-info-section">
+                    <div class="info-content">
+                        <h3>Need More Information?</h3>
+                        <p>Have questions about our hand-held scanner? Want to see it in action or discuss how it can fit into your vertical farming operation?</p>
+                        <p class="info-highlight">We're here to help! Arrange a live demo or get your questions answered through our contact form.</p>
+                        <a href="contact.html" class="contact-us-btn">Contact Us</a>
                     </div>
                 </div>
 
