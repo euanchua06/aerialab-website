@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Interface Software - AeriaLab</title>
+    <title>Harvester II - User Interface Software | AeriaLab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,6 +19,334 @@
         @keyframes fadeIn {
             to {
                 opacity: 1;
+            }
+        }
+
+        /* Enhanced Product Detail Styles - Dark Theme */
+        .product-detail-section {
+            padding: 60px 20px;
+            min-height: calc(100vh - 200px);
+            background: #0a0a0a;
+        }
+
+        .detail-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .detail-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .detail-hero .subtitle {
+            font-size: 1.2rem;
+            color: #cccccc;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #333;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
+            border-color: #00d4ff;
+        }
+
+        .feature-card h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .feature-card ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .feature-card li {
+            margin: 8px 0;
+            color: #aaaaaa;
+            line-height: 1.5;
+        }
+
+        .screenshot-section {
+            margin: 80px 0;
+        }
+
+        .screenshot-section h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 35px;
+            margin-bottom: 30px;
+        }
+
+        .screenshot-item {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #333;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+            border-color: #00d4ff;
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .screenshot-item .caption {
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .screenshot-item .caption h4 {
+            margin: 0 0 10px 0;
+            color: #00d4ff;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .screenshot-item .caption p {
+            margin: 0;
+            color: #aaaaaa;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .tech-specs {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #000;
+            padding: 60px 40px;
+            border-radius: 15px;
+            margin: 80px 0;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .tech-specs h3 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .spec-item {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .spec-item:hover {
+            background: rgba(0, 0, 0, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .spec-item h4 {
+            margin: 0 0 15px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .spec-item p {
+            margin: 5px 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .download-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 15px;
+            margin: 80px 0;
+            border: 2px solid #333;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .download-section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .download-section p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #000;
+            padding: 18px 50px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
+        }
+
+        .system-requirements {
+            margin: 80px 0;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 15px;
+            border: 2px solid #333;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .system-requirements h3 {
+            font-size: 2rem;
+            margin-bottom: 35px;
+            color: #00d4ff;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .requirements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .requirement-item {
+            padding: 20px;
+            border-left: 4px solid #00d4ff;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .requirement-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .requirement-item strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #00d4ff;
+            font-size: 1.05rem;
+        }
+
+        .requirement-item {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        .back-to-products-btn {
+            display: inline-block;
+            margin: 40px auto;
+            padding: 15px 40px;
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-products-btn:hover {
+            background: #00d4ff;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        .center-btn {
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .detail-hero h2 {
+                font-size: 2rem;
+            }
+
+            .detail-hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .feature-grid,
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshot-grid {
+                gap: 25px;
+            }
+
+            .tech-specs,
+            .download-section,
+            .system-requirements {
+                padding: 40px 25px;
+            }
+
+            .requirements-list {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -42,19 +370,326 @@
     <main>
         <section class="product-detail-section">
             <div class="container">
-                <h2>User Interface Software</h2>
-                
-                <div class="detail-content">
-                    <div class="detail-image">
-                        <img src="images/ui-software.jpg" alt="User Interface Software">
+                <div class="detail-hero">
+                    <h2>Harvester II - Plant Monitoring Software</h2>
+                    <p class="subtitle">Professional-grade vertical farming management system with AI-powered plant detection, real-time monitoring, and comprehensive analytics. Transform your vertical farm with cutting-edge computer vision technology.</p>
+                </div>
+
+                <!-- Key Features Grid -->
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🤖 AI-Powered Detection</h3>
+                        <p>Advanced YOLO-based computer vision for automatic plant identification:</p>
+                        <ul>
+                            <li>Multi-species support (Tomato, Lettuce, Mushroom)</li>
+                            <li>Real-time object detection at 30 FPS</li>
+                            <li>Ensemble detection methods for improved accuracy</li>
+                            <li>Customizable confidence thresholds</li>
+                        </ul>
                     </div>
-                    
-                    <div class="detail-description">
-                        <p>Already have the equipment but not the software? We provide our standalone program to complete your setup. Just install and use right away!</p>
+
+                    <div class="feature-card">
+                        <h3>📍 UWB Positioning System</h3>
+                        <p>Precision location tracking for seamless plant identification:</p>
+                        <ul>
+                            <li>±20cm accuracy with trilateration technology</li>
+                            <li>Real-time distance monitoring from 3+ anchors</li>
+                            <li>Visual anchor layout configuration</li>
+                            <li>Automatic plant-to-location matching</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>👥 Multi-User Management</h3>
+                        <p>Enterprise-ready user authentication and role management:</p>
+                        <ul>
+                            <li>Role-based access control (Admin, Manager, Worker)</li>
+                            <li>Email-based authentication system</li>
+                            <li>Secure password hashing</li>
+                            <li>Session management</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>📊 Analytics Dashboard</h3>
+                        <p>Comprehensive farm analytics and insights:</p>
+                        <ul>
+                            <li>Real-time plant count by species</li>
+                            <li>Health status monitoring</li>
+                            <li>Harvest tracking and history</li>
+                            <li>Interactive Chart.js visualizations</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>📝 Plant Notes & Tracking</h3>
+                        <p>Detailed record-keeping for every plant:</p>
+                        <ul>
+                            <li>Multi-note system with timestamps</li>
+                            <li>Attention-required flagging</li>
+                            <li>Harvest predictions</li>
+                            <li>Image capture history</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>🎯 Task Management</h3>
+                        <p>Organize farm operations efficiently:</p>
+                        <ul>
+                            <li>Create and assign tasks to team members</li>
+                            <li>Priority levels (High, Normal, Low)</li>
+                            <li>Auto-generate harvest tasks</li>
+                            <li>Track task completion</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>🏢 Multi-Farm Support</h3>
+                        <p>Manage multiple farms from one interface:</p>
+                        <ul>
+                            <li>Separate data for each farm location</li>
+                            <li>Independent anchor configurations</li>
+                            <li>Farm-specific analytics</li>
+                            <li>Easy farm switching</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>📈 Performance Monitoring</h3>
+                        <p>Real-time system metrics and diagnostics:</p>
+                        <ul>
+                            <li>FPS counter and performance graphs</li>
+                            <li>Camera feed monitoring</li>
+                            <li>Detection confidence visualization</li>
+                            <li>System resource tracking</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>💾 Data Export</h3>
+                        <p>Flexible data management and reporting:</p>
+                        <ul>
+                            <li>Excel export with plant data</li>
+                            <li>Image thumbnails in spreadsheets</li>
+                            <li>Separate harvested plants tracking</li>
+                            <li>Backup and archival features</li>
+                        </ul>
                     </div>
                 </div>
 
-                <a href="products.html" class="back-to-products-btn">Back to Products</a>
+                <!-- Screenshots Section -->
+                <div class="screenshot-section">
+                    <h3>Interface Overview</h3>
+                    
+                    <div class="screenshot-grid">
+                        <div class="screenshot-item">
+                            <img src="images/ui-login.jpg" alt="Login Screen">
+                            <div class="caption">
+                                <h4>Secure Login Portal</h4>
+                                <p>Professional authentication system with role-based access control for managing your farm team.</p>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <img src="images/ui-dashboard.jpg" alt="Main Dashboard">
+                            <div class="caption">
+                                <h4>Main Dashboard</h4>
+                                <p>Real-time overview of your farm with live camera feeds, plant counts, and quick access to all features.</p>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <img src="images/ui-scanning.jpg" alt="Plant Scanning Interface">
+                            <div class="caption">
+                                <h4>AI Plant Detection</h4>
+                                <p>Live camera view with YOLO detection overlays showing identified plants with confidence scores and bounding boxes.</p>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <img src="images/ui-uwb-positioning.jpg" alt="UWB Positioning">
+                            <div class="caption">
+                                <h4>UWB Positioning System</h4>
+                                <p>Visual representation of anchor positions and real-time distance measurements for precise plant localization.</p>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <img src="images/ui-plant-details.jpg" alt="Plant Details View">
+                            <div class="caption">
+                                <h4>Plant Details & History</h4>
+                                <p>Comprehensive plant information including growth timeline, notes, images, and health status tracking.</p>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <img src="images/ui-analytics.jpg" alt="Analytics Dashboard">
+                            <div class="caption">
+                                <h4>Analytics Center</h4>
+                                <p>Interactive charts and graphs showing species breakdown, health metrics, and harvest predictions with Chart.js.</p>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <img src="images/ui-settings.jpg" alt="Settings Panel">
+                            <div class="caption">
+                                <h4>Advanced Settings</h4>
+                                <p>Fine-tune detection parameters, configure camera settings, and adjust confidence thresholds for each plant species.</p>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <img src="images/ui-task-management.jpg" alt="Task Management">
+                            <div class="caption">
+                                <h4>Task Management</h4>
+                                <p>Create, assign, and track farming tasks with priority levels and automatic harvest task generation.</p>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <img src="images/ui-user-management.jpg" alt="User Management">
+                            <div class="caption">
+                                <h4>User Management</h4>
+                                <p>Admin interface for managing team members, roles, and access permissions across your farm organization.</p>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <img src="images/ui-performance.jpg" alt="Performance Monitor">
+                            <div class="caption">
+                                <h4>Performance Monitor</h4>
+                                <p>Real-time FPS tracking, system diagnostics, and camera feed health monitoring for optimal operation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Specifications -->
+                <div class="tech-specs">
+                    <h3>Technical Specifications</h3>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <h4>AI Engine</h4>
+                            <p>Framework: YOLO (Ultralytics)</p>
+                            <p>Models: 3 species-specific networks</p>
+                            <p>Detection Speed: 30 FPS</p>
+                            <p>Confidence: 58-62% threshold</p>
+                        </div>
+
+                        <div class="spec-item">
+                            <h4>Camera System</h4>
+                            <p>Resolution: 640x480</p>
+                            <p>Processing: 320x320 (YOLO)</p>
+                            <p>Frame Skip: Optimized performance</p>
+                            <p>Capture: Auto on scan</p>
+                        </div>
+
+                        <div class="spec-item">
+                            <h4>UWB Technology</h4>
+                            <p>Hardware: Linktrack P-8</p>
+                            <p>Accuracy: ±20cm radius</p>
+                            <p>Method: Trilateration (3+ anchors)</p>
+                            <p>Coverage: Customizable layout</p>
+                        </div>
+
+                        <div class="spec-item">
+                            <h4>Data Storage</h4>
+                            <p>Database: SQLite</p>
+                            <p>Format: Excel (.xlsx)</p>
+                            <p>Images: JPEG with thumbnails</p>
+                            <p>Backup: Multi-farm support</p>
+                        </div>
+
+                        <div class="spec-item">
+                            <h4>Web Interface</h4>
+                            <p>Backend: Flask (Python)</p>
+                            <p>Frontend: HTML5/CSS3/JavaScript</p>
+                            <p>Charts: Chart.js</p>
+                            <p>Access: Multi-device support</p>
+                        </div>
+
+                        <div class="spec-item">
+                            <h4>Security</h4>
+                            <p>Authentication: Email-based</p>
+                            <p>Encryption: Password hashing</p>
+                            <p>Sessions: Secure token management</p>
+                            <p>Roles: Admin/Manager/Worker</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Requirements -->
+                <div class="system-requirements">
+                    <h3>System Requirements</h3>
+                    <div class="requirements-list">
+                        <div class="requirement-item">
+                            <strong>Hardware Platform</strong>
+                            NVIDIA Jetson Nano (recommended) or compatible Linux system with GPU acceleration
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Operating System</strong>
+                            Ubuntu 18.04+ or JetPack 4.6+ for Jetson devices
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Memory</strong>
+                            Minimum 4GB RAM (Jetson Nano specification)
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Camera</strong>
+                            USB camera or CSI camera module compatible with OpenCV
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Python Version</strong>
+                            Python 3.6 or higher
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Dependencies</strong>
+                            OpenCV, NumPy, Flask, Ultralytics YOLO, OpenpyXL, PySerial (for UWB)
+                        </div>
+                        <div class="requirement-item">
+                            <strong>UWB Hardware (Optional)</strong>
+                            Linktrack P-8 UWB positioning system with 3+ anchor nodes
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Storage</strong>
+                            Minimum 16GB for system + data storage
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Network</strong>
+                            WiFi or Ethernet for multi-device access to web interface
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Section -->
+                <div class="download-section">
+                    <h3>Get Started Today</h3>
+                    <p>Download Harvester II and transform your vertical farming operation with professional AI-powered monitoring.</p>
+                    <a href="https://github.com/yourusername/harvester-ii" class="download-btn" target="_blank">Download from GitHub</a>
+                    <p style="margin-top: 20px; font-size: 0.9rem;">Open source • Free to use • Active community support</p>
+                </div>
+
+                <!-- Key Features Summary -->
+                <div class="feature-grid" style="margin-top: 60px;">
+                    <div class="feature-card">
+                        <h3>Easy Setup</h3>
+                        <p>Simple installation process with comprehensive documentation. Get up and running in under 30 minutes.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Scalable Architecture</h3>
+                        <p>Designed to grow with your farm. Add more cameras, farms, and team members as needed.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Active Development</h3>
+                        <p>Regular updates with new features, bug fixes, and performance improvements from our dedicated team.</p>
+                    </div>
+                </div>
+
+                <div class="center-btn">
+                    <a href="products.html" class="back-to-products-btn">← Back to Products</a>
+                </div>
             </div>
         </section>
     </main>
@@ -66,6 +701,3 @@
     </footer>
 </body>
 </html>
-
-
-
