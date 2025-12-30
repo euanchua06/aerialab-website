@@ -29,24 +29,104 @@
             background: #0a0a0a;
         }
 
-        .detail-hero {
-            text-align: center;
-            margin-bottom: 60px;
+        /* Product Hero Section */
+        .product-hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+            padding: 40px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 15px;
+            border: 2px solid #333;
         }
 
-        .detail-hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        .product-hero-image {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #00d4ff;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .product-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-hero-content h2 {
             color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             font-weight: 700;
         }
 
-        .detail-hero .subtitle {
-            font-size: 1.2rem;
+        .product-hero-description {
             color: #cccccc;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .product-hero-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .hero-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #aaaaaa;
+            font-size: 0.95rem;
+        }
+
+        .feature-icon {
+            font-size: 1.3rem;
+        }
+
+        .product-hero-price {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 25px;
+            padding: 20px 0;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .price-amount {
+            color: #00d4ff;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .price-note {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .buy-now-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #000;
+            padding: 18px 60px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+            text-align: center;
+        }
+
+        .buy-now-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
         }
 
         .feature-grid {
@@ -332,6 +412,30 @@
                 font-size: 1rem;
             }
 
+            .product-hero-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px 20px;
+            }
+
+            .product-hero-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .product-hero-features {
+                grid-template-columns: 1fr;
+            }
+
+            .price-amount {
+                font-size: 2rem;
+            }
+
+            .buy-now-btn {
+                width: 100%;
+                padding: 16px 40px;
+                font-size: 1.2rem;
+            }
+
             .feature-grid,
             .screenshot-grid {
                 grid-template-columns: 1fr;
@@ -372,10 +476,45 @@
     <main>
         <section class="product-detail-section">
             <div class="container">
-                <div class="detail-hero">
-                    <h2>Harvester II - Plant Monitoring Software</h2>
-                    <p class="subtitle">Professional-grade vertical farming management system with AI-powered plant detection, real-time monitoring, and comprehensive analytics. Transform your vertical farm with cutting-edge computer vision technology.</p>
+                <!-- Product Hero Section with Buy Button -->
+                <div class="product-hero-section">
+                    <div class="product-hero-image">
+                        <img src="images/ui-applications.png" alt="Harvester II User Interface">
+                    </div>
+                    <div class="product-hero-content">
+                        <h2>Harvester II - User Interface Software</h2>
+                        <p class="product-hero-description">Professional-grade vertical farming management system with AI-powered plant detection, real-time monitoring, and comprehensive analytics. Transform your vertical farm with cutting-edge computer vision technology.</p>
+                        
+                        <div class="product-hero-features">
+                            <div class="hero-feature-item">
+                                <span class="feature-icon">🤖</span>
+                                <span>AI-Powered Detection</span>
+                            </div>
+                            <div class="hero-feature-item">
+                                <span class="feature-icon">📍</span>
+                                <span>UWB Positioning (±20cm)</span>
+                            </div>
+                            <div class="hero-feature-item">
+                                <span class="feature-icon">📊</span>
+                                <span>Real-Time Analytics</span>
+                            </div>
+                            <div class="hero-feature-item">
+                                <span class="feature-icon">👥</span>
+                                <span>Multi-User Management</span>
+                            </div>
+                        </div>
+
+                        <div class="product-hero-price">
+                            <span class="price-amount">$250.00</span>
+                            <span class="price-note">One-time purchase • Lifetime updates</span>
+                        </div>
+
+                        <a href="checkout-ui.html" class="buy-now-btn">Buy Now</a>
+                    </div>
                 </div>
+
+                <h2 style="text-align: center; color: #ffffff; font-size: 2.2rem; margin: 80px 0 20px 0;">Complete Feature Set</h2>
+                <p style="text-align: center; color: #cccccc; font-size: 1.1rem; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">Explore the comprehensive capabilities of Harvester II that make it the ultimate vertical farming management solution.</p>
 
                 <!-- Key Features Grid -->
                 <div class="feature-grid">
@@ -565,7 +704,7 @@
                         </div>
 
                         <div class="screenshot-item">
-                            <img src="images/ui-task-management.png" alt="Daily Tasks">
+                            <img src="images/ui-task-management.png" alt="Daily Tasks" style="object-position: left;">
                             <div class="caption">
                                 <h4>Daily Task Management</h4>
                                 <p>Organize farm operations with task lists showing priority levels (HIGH/NORMAL/LOW), plant assignments, due dates, and automatic harvest task generation.</p>
@@ -679,31 +818,20 @@
                     </div>
                 </div>
 
-                <!-- Download Section -->
-                <div class="download-section">
-                    <h3>Get Started Today</h3>
-                    <p>Download Harvester II and transform your vertical farming operation with professional AI-powered monitoring.</p>
-                    <a href="https://github.com/yourusername/harvester-ii" class="download-btn" target="_blank">Download from GitHub</a>
-                    <p style="margin-top: 20px; font-size: 0.9rem;">Open source • Free to use • Active community support</p>
+                <!-- Technical Specifications -->
+
+                <div class="center-btn">
+                    <a href="products.html" class="back-to-products-btn">← Back to Products</a>
                 </div>
+            </div>
+        </section>
+    </main>
 
-                <!-- Key Features Summary -->
-                <div class="feature-grid" style="margin-top: 60px;">
-                    <div class="feature-card">
-                        <h3>Easy Setup</h3>
-                        <p>Simple installation process with comprehensive documentation. Get up and running in under 30 minutes.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <h3>Scalable Architecture</h3>
-                        <p>Designed to grow with your farm. Add more cameras, farms, and team members as needed.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <h3>Active Development</h3>
-                        <p>Regular updates with new features, bug fixes, and performance improvements from our dedicated team.</p>
-                    </div>
-                </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AeriaLab. All rights reserved.</p>
+        </div>
+    </footer>
 
                 <div class="center-btn">
                     <a href="products.html" class="back-to-products-btn">← Back to Products</a>
@@ -719,4 +847,3 @@
     </footer>
 </body>
 </html>
-
