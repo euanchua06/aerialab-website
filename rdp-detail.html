@@ -100,7 +100,6 @@
         }
 
         .app-icon {
-            font-size: 4rem;
             background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
             width: 100px;
             height: 100px;
@@ -109,6 +108,13 @@
             justify-content: center;
             border-radius: 20px;
             box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+            padding: 15px;
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .app-title h3 {
@@ -442,7 +448,9 @@
                     <!-- Main Content -->
                     <div class="main-content-card">
                         <div class="content-header">
-                            <div class="app-icon">🖥️</div>
+                            <div class="app-icon">
+                                <img src="images/logo_drone_5.ico" alt="AeriaLab Logo">
+                            </div>
                             <div class="app-title">
                                 <h3>AeriaLab Remote Desktop</h3>
                                 <div class="app-version">Version 1.0 • Windows Application</div>
