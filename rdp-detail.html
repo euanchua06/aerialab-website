@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remote Desktop Setup Installer - AeriaLab</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -18,6 +18,390 @@
         @keyframes fadeIn {
             to {
                 opacity: 1;
+            }
+        }
+
+        /* Hero Banner */
+        .rdp-hero {
+            position: relative;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            padding: 80px 20px;
+            margin-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .rdp-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+        }
+
+        .hero-content-rdp {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-content-rdp h2 {
+            color: #000;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero-content-rdp p {
+            color: #000;
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        /* Download Section */
+        .downloads-section {
+            padding: 0 20px 80px;
+        }
+
+        .rdp-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+        }
+
+        /* Main Content Card */
+        .main-content-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #333;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .content-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #333;
+        }
+
+        .app-icon {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .app-title h3 {
+            color: #00d4ff;
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .app-version {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .app-description {
+            color: #cccccc;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        /* Features Grid */
+        .features-grid-rdp {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .feature-item-rdp {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item-rdp:hover {
+            border-color: #00d4ff;
+            transform: translateY(-3px);
+        }
+
+        .feature-item-rdp h5 {
+            color: #00d4ff;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item-rdp p {
+            color: #cccccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Steps Section */
+        .steps-section {
+            background: rgba(0, 212, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #00d4ff;
+            margin-bottom: 35px;
+        }
+
+        .steps-section h4 {
+            color: #00d4ff;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            background: #00d4ff;
+            color: #000;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+            padding-top: 8px;
+        }
+
+        .step-content p {
+            color: #cccccc;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .download-box {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4);
+        }
+
+        .download-box h4 {
+            color: #000;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .download-size {
+            color: #000;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .download-button-main {
+            display: block;
+            background: #000;
+            color: #00d4ff;
+            padding: 18px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .download-button-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .download-note {
+            color: #000;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Requirements Box */
+        .requirements-box {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #333;
+        }
+
+        .requirements-box h4 {
+            color: #00d4ff;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: #cccccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .requirement-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .requirement-icon {
+            color: #00d4ff;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        /* Support Box */
+        .support-box {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #333;
+            text-align: center;
+        }
+
+        .support-box h4 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .support-box p {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Back Button */
+        .back-button-container {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+
+        .back-to-products-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .back-to-products-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .rdp-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid-rdp {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content-rdp h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content-rdp p {
+                font-size: 1.1rem;
+            }
+
+            .main-content-card {
+                padding: 25px;
+            }
+
+            .content-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .app-title h3 {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -36,45 +420,169 @@
             </div>
         </nav>
     </header>
+
+    <!-- Hero Banner -->
+    <div class="rdp-hero">
+        <div class="hero-content-rdp">
+            <h2>Jetson Remote Desktop Application</h2>
+            <p>Seamless wireless connectivity to your Jetson Nano</p>
+        </div>
+    </div>
+
     <main>
         <section class="downloads-section">
             <div class="container">
-                
-                
-                <div class="download-card">
-                    <div class="download-icon">📦</div>
-                    <h3>Jetson Remote Desktop Application</h3>
-                    <p>Connect wirelessly to your Jetson Nano with automatic remote desktop configuration.</p>
-                    
-                    <div class="install-steps">
-                        <h4>How to Use:</h4>
-                        <ol>
-                            <li>Download the application using the button below</li>
-                            <li>Before launching the app, ensure your Jetson Nano is powered on with the camera and tag properly connected</li>                                   
-                            <li>Run the application to establish an automatic remote connection to your Jetson device</li>
-                            <li>You can now control your Jetson computer wirelessly through the remote desktop interface</li>
-                        </ol>
-                    </div>
-                    
-                    <a href="installers/AeriaLab.exe" download class="download-button">
-                        ⬇️ Download Application
+                <div class="back-button-container">
+                    <a href="products.html" class="back-to-products-btn">
+                        ← Back to Products
                     </a>
-                    
-                    <div class="requirements">
-                        <h4>System Requirements:</h4>
-                        <p>• Windows 10/11<br>
-                        • Active network connection<br>
-                        • Jetson Nano must be powered on and connected to the same network</p>
+                </div>
+
+                <div class="rdp-container">
+                    <!-- Main Content -->
+                    <div class="main-content-card">
+                        <div class="content-header">
+                            <div class="app-icon">🖥️</div>
+                            <div class="app-title">
+                                <h3>AeriaLab Remote Desktop</h3>
+                                <div class="app-version">Version 1.0 • Windows Application</div>
+                            </div>
+                        </div>
+
+                        <p class="app-description">
+                            Connect wirelessly to your Jetson Nano with automatic remote desktop configuration. Our application eliminates complex setup procedures, providing instant access to your Jetson device through an intuitive interface.
+                        </p>
+
+                        <!-- Key Features -->
+                        <div class="features-grid-rdp">
+                            <div class="feature-item-rdp">
+                                <h5>⚡ Automatic Configuration</h5>
+                                <p>Zero manual setup required - connect automatically to your Jetson device</p>
+                            </div>
+                            <div class="feature-item-rdp">
+                                <h5>🔒 Secure Connection</h5>
+                                <p>Encrypted communication ensures your data remains protected</p>
+                            </div>
+                            <div class="feature-item-rdp">
+                                <h5>📡 Wireless Control</h5>
+                                <p>Full remote desktop access without physical connections</p>
+                            </div>
+                            <div class="feature-item-rdp">
+                                <h5>🎯 One-Click Launch</h5>
+                                <p>Simple interface gets you connected in seconds</p>
+                            </div>
+                        </div>
+
+                        <!-- Installation Steps -->
+                        <div class="steps-section">
+                            <h4>Quick Start Guide</h4>
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <p>Download the application using the download button</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <p>Power on your Jetson Nano and ensure the camera and tag are properly connected</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <p>Launch the application to establish an automatic remote connection</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <p>Control your Jetson computer wirelessly through the remote desktop interface</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <a href="products.html" class="back-to-products-btn">Back to Products</a>
+
+                    <!-- Sidebar -->
+                    <div class="sidebar-card">
+                        <!-- Download Box -->
+                        <div class="download-box">
+                            <h4>Download Now</h4>
+                            <div class="download-size">Installer Size: ~15 MB</div>
+                            <a href="installers/AeriaLab.exe" download class="download-button-main">
+                                ⬇️ Download for Windows
+                            </a>
+                            <p class="download-note">Compatible with Windows 10/11</p>
+                        </div>
+
+                        <!-- System Requirements -->
+                        <div class="requirements-box">
+                            <h4>💻 System Requirements</h4>
+                            <div class="requirement-item">
+                                <span class="requirement-icon">✓</span>
+                                <span>Windows 10 or Windows 11 operating system</span>
+                            </div>
+                            <div class="requirement-item">
+                                <span class="requirement-icon">✓</span>
+                                <span>Active network connection (WiFi or Ethernet)</span>
+                            </div>
+                            <div class="requirement-item">
+                                <span class="requirement-icon">✓</span>
+                                <span>Jetson Nano powered on and connected to same network</span>
+                            </div>
+                            <div class="requirement-item">
+                                <span class="requirement-icon">✓</span>
+                                <span>Minimum 4GB RAM recommended</span>
+                            </div>
+                        </div>
+
+                        <!-- Support Box -->
+                        <div class="support-box">
+                            <h4>Need Help?</h4>
+                            <p>Our support team is ready to assist you with installation and setup questions.</p>
+                            <a href="contact.html" class="contact-btn">Contact Support</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
     <footer>
-        <div class="container">
+        <div class="footer-content container">
+            <div class="footer-section">
+                <h3 class="footer-logo">AeriaLab</h3>
+                <p class="footer-tagline">Innovation in Drone Technology</p>
+                <p class="footer-description">Pioneering advanced solutions for autonomous systems and precision agriculture.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul class="footer-links">
+                    <li><a href="scanner-detail.html">Jetson Scanner</a></li>
+                    <li><a href="rdp-detail.html">Remote Desktop</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                    <li>📧 info@aerialab.com</li>
+                    <li>📞 +65 1234 5678</li>
+                    <li>📍 Singapore</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2026 AeriaLab. All rights reserved.</p>
+            <p class="footer-credits">Designed with innovation and precision</p>
         </div>
     </footer>
 </body>
