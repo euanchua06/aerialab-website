@@ -29,10 +29,15 @@
 
         .product-card.coming-soon .product-image {
             position: relative;
+            height: 300px;
+            overflow: hidden;
         }
 
         .product-card.coming-soon .product-image img {
             filter: blur(3px);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .product-card.coming-soon .product-image::after {
@@ -150,7 +155,7 @@
                             <img src="images/drone.jpg" alt="Autonomous Scanning Drone">
                         </div>
                         <div class="product-info-section">
-                            <h3>Autonomous Scanning Drone</h3>
+                            <h3>AeriaScout</h3>
                             <p class="in-development">In Development</p>
                             <p class="product-price">TBA</p>
                             <div class="product-buttons single-button">
