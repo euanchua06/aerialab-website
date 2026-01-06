@@ -21,6 +21,61 @@
                 opacity: 1;
             }
         }
+
+        /* Coming Soon Product Styling */
+        .product-card.coming-soon {
+            position: relative;
+            opacity: 0.85;
+        }
+
+        .product-card.coming-soon .product-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2px);
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+        }
+
+        .product-card.coming-soon .product-info-section h3 {
+            color: #cccccc;
+        }
+
+        .product-card.coming-soon .product-price {
+            color: #888;
+        }
+
+        .product-card.coming-soon .btn-learn-more {
+            background: #333;
+            color: #888;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .in-development {
+            color: #00d4ff;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -87,6 +142,22 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Product 4: Autonomous Drone (Coming Soon) -->
+                    <div class="product-card coming-soon">
+                        <span class="coming-soon-badge">Coming Soon</span>
+                        <div class="product-image">
+                            <img src="images/drone.jpg" alt="Autonomous Scanning Drone">
+                        </div>
+                        <div class="product-info-section">
+                            <h3>Autonomous Scanning Drone</h3>
+                            <p class="in-development">In Development</p>
+                            <p class="product-price">TBA</p>
+                            <div class="product-buttons single-button">
+                                <a href="#" class="btn-learn-more full-width">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -138,13 +209,3 @@
     </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
