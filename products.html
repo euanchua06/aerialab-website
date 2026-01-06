@@ -73,13 +73,29 @@
             color: #888;
             cursor: not-allowed;
             pointer-events: none;
+            display: none;
         }
 
         .in-development {
             color: #00d4ff;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             font-style: italic;
-            margin-top: 5px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .product-card.coming-soon .product-info-section {
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card.coming-soon .product-price {
+            font-size: 1.8rem;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -152,15 +168,12 @@
                     <div class="product-card coming-soon">
                         <span class="coming-soon-badge">Coming Soon</span>
                         <div class="product-image">
-                            <img src="images/drone.jpg" alt="Autonomous Scanning Drone">
+                            <img src="images/drone.jpg" alt="AeriaScout">
                         </div>
                         <div class="product-info-section">
                             <h3>AeriaScout</h3>
                             <p class="in-development">In Development</p>
                             <p class="product-price">TBA</p>
-                            <div class="product-buttons single-button">
-                                <a href="#" class="btn-learn-more full-width">Learn More</a>
-                            </div>
                         </div>
                     </div>
                 </div>
